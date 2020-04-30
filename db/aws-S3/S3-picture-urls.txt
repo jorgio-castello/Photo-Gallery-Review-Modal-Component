@@ -1,0 +1,1 @@
+Absolute Path: https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${fileName}
