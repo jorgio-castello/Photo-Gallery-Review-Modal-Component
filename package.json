@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "version": "",
+  "name": "trip-advisor-photo-gallery",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "jorgio-castello",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
