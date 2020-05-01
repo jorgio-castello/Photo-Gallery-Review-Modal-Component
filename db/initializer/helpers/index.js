@@ -7,4 +7,13 @@ const generateProbabilityDecision = (odds) => {
   return randomNumber < oddsAsPercent;
 };
 
+const convertJavaScriptDateToMySQL = date => {
+  const year = date.getFullYear();
+  const month = (`0${date.getMonth() + 1}`).slice(-2);
+  const day = (`0${date.getDate()}`).slice(-2);
+
+  return `${year}/${month}/${day}`;
+};
+
 module.exports.generateProbabilityDecision = generateProbabilityDecision;
+module.exports.convertJavaScriptDateToMySQL = convertJavaScriptDateToMySQL;
