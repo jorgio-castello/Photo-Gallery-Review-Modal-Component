@@ -19,7 +19,7 @@ CREATE TABLE photoCreatorInfo (
   review_title TEXT,
   review_description TEXT,
   review_stars INT,
-  helpful_score INT,
+  review_helpful_score INT,
   PRIMARY KEY (id)
 );
 
