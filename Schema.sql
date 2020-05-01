@@ -11,12 +11,13 @@ CREATE TABLE activity (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE reviews (
+CREATE TABLE photoCreatorInfo (
   id INT NOT NULL AUTO_INCREMENT,
   user VARCHAR(50),
   user_contributions INT,
   date_created DATE,
-  review_text TEXT,
+  review_title TEXT,
+  review_description TEXT,
   review_stars INT,
   helpful_score INT,
   PRIMARY KEY (id)
@@ -31,8 +32,8 @@ CREATE TABLE photos (
   activity_id INT NOT NULL,
   CONSTRAINT fk_activity_id FOREIGN KEY (activity_id) REFERENCES activity(id),
 
-  review_id INT,
-  CONSTRAINT fk_review_id FOREIGN KEY (review_id) REFERENCES reviews(id)
+  photoCreatorInfo_id INT,
+  CONSTRAINT fk_photoCreatorInfo_id FOREIGN KEY (photoCreatorInfo_id) REFERENCES photoCreatorInfo(id)
 );
 
 
