@@ -12,6 +12,10 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "env": {
+        "jest": true
+    },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
