@@ -16,6 +16,6 @@ fs.readdir(pictureFolderPath, (err, picturePaths) => {
   if (err) {
     throw new Error(err);
   } else {
-    uploadPictures(picturePaths.slice(0, 5));
+    uploadPictures(picturePaths);
   }
 });
