@@ -1,5 +1,5 @@
 const faker = require('faker');
-const { generateProbabilityDecision } = require('../helpers');
+const { generateProbabilityDecision, convertJavaScriptDateToMySQL } = require('../helpers');
 
 const TripAdvisorPhotoCreatorInfo = function() { // eslint-disable-line
   this.user = null; // Created by this user: either user or management
@@ -17,7 +17,7 @@ TripAdvisorPhotoCreatorInfo.prototype.createdByManagement = function() { // esli
 
   // MANAGEMENT UPLOADS WITH ADDITIONAL INFORMATION (i.e. not a stock image)
   if (generateProbabilityDecision(0.5)) { // Management generates non-stock images 50% of time
-    this.date_created = faker.date.between('2010', '2015');
+    this.date_created = convertJavaScriptDateToMySQL(faker.date.between('2010', '2015'));
     this.review_title = faker.lorem.words();
     this.review_helpful_score = Math.ceil(Math.random() * 10);
   }
@@ -27,7 +27,7 @@ TripAdvisorPhotoCreatorInfo.prototype.createdByUser = function() { // eslint-dis
   // DEFAULT USER PROPERTIES
   this.user = faker.name.findName();
   this.user_contributions = Math.floor(Math.random() * 10);
-  this.date_created = faker.date.between('2015', '2020');
+  this.date_created = convertJavaScriptDateToMySQL(faker.date.between('2015', '2020'));
   this.review_title = faker.lorem.words();
 
   // USER UPLOADS IMAGE WITH REVIEW
