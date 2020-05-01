@@ -32,7 +32,7 @@ const uploadPictures = (pictures, pictureIdx = 0) => { // Recursive function tha
         fs.appendFile(pictureUrlsFilePath, `${imageName}${os.EOL}`, 'utf8', (writeFileErr) => {
           if (writeFileErr) {
             throw new Error(writeFileErr);
-          } else {
+          } else { /* eslint-disable no-console */
             console.log(`Successfully Uploaded Picture-${pictureIdx}`);
             uploadPictures(pictures, pictureIdx + 1);
           }
