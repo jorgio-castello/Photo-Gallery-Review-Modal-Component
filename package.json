@@ -38,6 +38,7 @@
     "jest": "^25.5.3",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "lint-staged": "^10.2.2",
     "live-server": "^1.2.1",
     "path": "^0.12.7",
     "webpack": "^4.43.0",
@@ -45,7 +46,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": ["lint-staged"]
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx}":["eslint", "npm test"]
   }
 }
