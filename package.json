@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.666.0",
+    "faker": "^4.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -46,10 +47,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": ["lint-staged"]
+      "pre-commit": [
+        "lint-staged"
+      ]
     }
   },
   "lint-staged": {
-    "*.{js,jsx}":["eslint", "npm test"]
+    "*.{js,jsx}": [
+      "eslint",
+      "npm test"
+    ]
   }
 }
