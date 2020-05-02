@@ -11,12 +11,16 @@
     "react-dev": "webpack -d --watch",
     "start-react": "live-server --open=client/dist",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "seed": "mysql -u root -p < schema.sql && node db/initializer/seedDB.js"
   },
   "dependencies": {
     "aws-sdk": "^2.666.0",
+    "faker": "^4.1.0",
+    "mysql": "^2.18.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "underscore": "^1.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -38,6 +42,7 @@
     "jest": "^25.5.3",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "lint-staged": "^10.2.2",
     "live-server": "^1.2.1",
     "path": "^0.12.7",
     "webpack": "^4.43.0",
@@ -45,7 +50,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": [
+        "lint-staged"
+      ]
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint",
+      "npm test"
+    ]
   }
 }

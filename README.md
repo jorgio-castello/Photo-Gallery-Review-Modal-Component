@@ -1,4 +1,4 @@
-# Project Name
+# Trip Advisor
 
 > Project description
 
@@ -16,8 +16,21 @@
 1. [Development](#development)
 
 ## Usage
-
-> Some usage instructions
+> Please run npm install in the project directory's root <br/> </br>
+> Seeding the MySQL database
+1. Prep <br/>
+  1a. If your default MySQL user is 'root', <strong>and you do not have a password</strong>, proceed to Step 2 </br>
+  1b. Please create a file called config.js in the root of this directory </br>
+  1c. Add the following to the config.js file </br>
+  ```
+  module.exports.mysqlConfig = {
+    host: 'localhost',
+    user: [Add your MySQL username here as a string],
+    password: [Add your MySQL password here as a string],
+    database: 'tripAdvisorGallery'
+  };
+  ```
+2. In the root directory, copy / paste the following command: npm run seed
 
 ## Requirements
 

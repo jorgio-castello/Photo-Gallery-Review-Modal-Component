@@ -2,3 +2,5 @@ node_modules/
 config.js
 db/aws-S3/pictures/
 coverage/
+client/dist/bundle.js
+package-lock.json
