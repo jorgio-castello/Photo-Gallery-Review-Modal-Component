@@ -11,7 +11,8 @@
     "react-dev": "webpack -d --watch",
     "start-react": "live-server --open=client/dist",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "seed": "mysql -u root -p < schema.sql && node db/initializer/seedDB.js"
   },
   "dependencies": {
     "aws-sdk": "^2.666.0",
