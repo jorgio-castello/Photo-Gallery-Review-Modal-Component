@@ -42,7 +42,19 @@ const addPhoto = (photoObj, activity_id, photoCreatorInfo_id, callback) => {
   });
 };
 
+const queryDbForGalleryData = (id, callback) => {
+  const query = `select * from photos, activity, photoCreatorInfo where photos.activity_id=activity.id and photos.photoCreatorInfo_id=photoCreatorInfo.id and activity.id=${id}`;
+  db.query(query, (err, data) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
+};
+
 
 module.exports.addActivity = addActivity;
 module.exports.addPhotoCreatorInfo = addPhotoCreatorInfo;
 module.exports.addPhoto = addPhoto;
+module.exports.queryDbForGalleryData = queryDbForGalleryData;
