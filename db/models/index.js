@@ -1,7 +1,7 @@
 const db = require('../index.js');
 
 const addActivity = ({ name, location }, callback) => {
-  const query = `insert into activity(name, location) values('${name}','${location}')`;
+  const query = `insert into activity(name, location) values("${name}","${location}")`;
   db.query(query, (err, success) => {
     if (err) {
       throw new Error(err);
@@ -18,7 +18,7 @@ const addPhotoCreatorInfo = (info, callback) => {
     review_description, review_stars, review_helpful_score,
   } = info;
 
-  const query = `insert into photoCreatorInfo(user, user_contributions, date_created, review_title, review_description, review_stars, review_helpful_score) values('${user}', ${user_contributions}, '${date_created}', '${review_title}', '${review_description}', ${review_stars}, ${review_helpful_score})`;
+  const query = `insert into photoCreatorInfo(user, user_contributions, date_created, review_title, review_description, review_stars, review_helpful_score) values("${user}", ${user_contributions}, "${date_created}", "${review_title}", "${review_description}", ${review_stars}, ${review_helpful_score})`;
   /* eslint-disable camelcase */
 
   db.query(query, (err, success) => {
