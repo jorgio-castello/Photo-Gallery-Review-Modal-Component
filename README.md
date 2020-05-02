@@ -16,7 +16,7 @@
 1. [Development](#development)
 
 ## Usage
-> Please run npm install in the project directory's root
+> Please run npm install in the project directory's root <br/> </br>
 > Seeding the MySQL database
 1. Prep <br/>
   1a. If your default MySQL user is 'root', <strong>and you do not have a password</strong>, proceed to Step 2 </br>
