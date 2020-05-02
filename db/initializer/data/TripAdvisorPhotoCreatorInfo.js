@@ -14,10 +14,10 @@ const TripAdvisorPhotoCreatorInfo = function() { // eslint-disable-line
 TripAdvisorPhotoCreatorInfo.prototype.createdByManagement = function() { // eslint-disable-line
   // DEFAULT MANAGEMENT PROPERTY
   this.user = 'Management';
+  this.date_created = convertJavaScriptDateToMySQL(faker.date.between('2010', '2015'));
 
   // MANAGEMENT UPLOADS WITH ADDITIONAL INFORMATION (i.e. not a stock image)
   if (generateProbabilityDecision(0.5)) { // Management generates non-stock images 50% of time
-    this.date_created = convertJavaScriptDateToMySQL(faker.date.between('2010', '2015'));
     this.review_title = faker.lorem.words();
     this.review_helpful_score = Math.ceil(Math.random() * 10);
   }
