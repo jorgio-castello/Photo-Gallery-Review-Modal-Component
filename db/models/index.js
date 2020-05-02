@@ -30,12 +30,14 @@ const addPhotoCreatorInfo = (info, callback) => {
   });
 };
 
-const addPhoto = (photoObj, activity_id, photoCreatorInfo_id) => {
+const addPhoto = (photoObj, activity_id, photoCreatorInfo_id, callback) => {
   const { link, alt } = photoObj;
   const query = `insert into photos(link, alt, activity_id, photoCreatorInfo_id) values('${link}', '${alt}', ${activity_id}, ${photoCreatorInfo_id})`;
   db.query(query, (err) => {
     if (err) {
-      throw new Error(err);
+      callback(err);
+    } else {
+      callback(null);
     }
   });
 };
