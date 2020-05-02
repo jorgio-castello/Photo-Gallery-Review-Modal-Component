@@ -43,19 +43,24 @@ const addPhoto = (photoObj, activity_id, photoCreatorInfo_id, callback) => {
 };
 
 const queryDbForGalleryData = (id, callback) => {
-  const query = `select photos.link, photos.alt, activity.name, activity.location, photoCreatorInfo.user, photoCreatorInfo.user_contributions, photoCreatorInfo.date_created, photoCreatorInfo.review_title, photoCreatorInfo.review_description, photoCreatorInfo.review_stars, photoCreatorInfo.review_helpful_score from photos, activity, photoCreatorInfo where photos.activity_id=activity.id and photos.photoCreatorInfo_id=photoCreatorInfo.id and activity.id=${id} order by photoCreatorInfo.user="Management" desc, photoCreatorInfo.review_title='null' desc`;
-  db.query(query, (err, data) => {
-    if (err) {
-      console.log(err);
-      callback(err);
+  const activityQuery = `select name, location from activity where activity.id=${id}`;
+  db.query(activityQuery, (activityQueryErr, activityData) => {
+    if (activityQueryErr) {
+      callback(activityQueryErr);
     } else {
-      console.log(data);
-      callback(null, data);
+      const photosQuery = `select photos.link, photos.alt, photoCreatorInfo.user, photoCreatorInfo.user_contributions, photoCreatorInfo.date_created, photoCreatorInfo.review_title, photoCreatorInfo.review_description, photoCreatorInfo.review_stars, photoCreatorInfo.review_helpful_score from photos, activity, photoCreatorInfo where photos.activity_id=activity.id and photos.photoCreatorInfo_id=photoCreatorInfo.id and activity.id=${id} order by photoCreatorInfo.user="Management" desc, photoCreatorInfo.review_title='null' desc`;
+      db.query(photosQuery, (photosQueryErr, photos) => {
+        if (photosQueryErr) {
+          callback(photosQueryErr);
+        } else {
+          const [activity] = activityData;
+          const galleryData = { activity, photos };
+          callback(null, galleryData);
+        }
+      });
     }
   });
 };
-
-queryDbForGalleryData(1, () => {});
 
 module.exports.addActivity = addActivity;
 module.exports.addPhotoCreatorInfo = addPhotoCreatorInfo;
