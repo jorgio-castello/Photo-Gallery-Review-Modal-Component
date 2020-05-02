@@ -46,8 +46,3 @@ const addPhoto = (photoObj, activity_id, photoCreatorInfo_id, callback) => {
 module.exports.addActivity = addActivity;
 module.exports.addPhotoCreatorInfo = addPhotoCreatorInfo;
 module.exports.addPhoto = addPhoto;
-// addActivity(activity, (activity_id) => {
-//   addPhotoCreatorInfo(info, (photoCreatorInfo_id) => {
-//     addPhoto({link: '.jpeg', alt: 'hello' }, activity_id, photoCreatorInfo_id);
-//   });
-// });
