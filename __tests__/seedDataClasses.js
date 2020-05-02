@@ -44,7 +44,7 @@ describe('Seed Data Activity, Photo, and Info Classes', () => {
     info.createdByManagement();
     const user = typeof info.user === 'string' || info.user === null;
     const userContributions = typeof info.user_contributions === 'number' || info.user_contributions === null;
-    const dateCreated = typeof info.date_created === 'object' || info.date_created === null;
+    const dateCreated = typeof info.date_created === 'string' || info.date_created === null;
     const reviewTitle = typeof info.review_title === 'string' || info.review_title === null;
     const reviewDescription = typeof info.review_description === 'string' || info.review_description === null;
     const reviewStars = typeof info.review_stars === 'number' || info.review_stars === null;
@@ -64,7 +64,7 @@ describe('Seed Data Activity, Photo, and Info Classes', () => {
     info.createdByUser();
     const user = typeof info.user === 'string' || info.user === null;
     const userContributions = typeof info.user_contributions === 'number' || info.user_contributions === null;
-    const dateCreated = typeof info.date_created === 'object' || info.date_created === null;
+    const dateCreated = typeof info.date_created === 'string' || info.date_created === null;
     const reviewTitle = typeof info.review_title === 'string' || info.review_title === null;
     const reviewDescription = typeof info.review_description === 'string' || info.review_description === null;
     const reviewStars = typeof info.review_stars === 'number' || info.review_stars === null;
