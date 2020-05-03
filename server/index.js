@@ -11,3 +11,5 @@ app.use(cors());
 app.get('/tripAdvisor/:activityId/gallery', getGalleryForActivityId);
 
 app.listen(9999, () => console.log('Server is running on Port 9999...'));
+
+module.exports = app;
