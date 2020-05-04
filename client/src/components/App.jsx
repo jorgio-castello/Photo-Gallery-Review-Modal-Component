@@ -15,6 +15,18 @@ class App extends React.Component {
 
   componentDidMount() {
     const { photos } = ExampleActivityData;
+    const links = photos.map((photo) => {
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'preload');
+      link.setAttribute('as', 'image');
+      link.setAttribute('href', `https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${photo.link}`);
+      return link;
+    });
+
+    links.forEach((link) => {
+      document.head.appendChild(link);
+    });
+
     this.setState({
       activePhotoIdx: 0,
       photos,
