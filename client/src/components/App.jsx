@@ -5,9 +5,14 @@ import ExampleActivityData from '../../../ExampleActivityData';
 
 // Helper Functions
 import preloadImages from '../helpers/preloadImages';
+import handlers from '../helpers/handlers';
 
 // CSS
 import ImageSliderCSS from '../style/ImageSlider.css';
+
+// Event Handlers
+const { nextImageHandler, prevImageHandler } = handlers;
+
 
 class App extends React.Component {
   constructor(props) {
@@ -16,8 +21,8 @@ class App extends React.Component {
       activePhotoIdx: 0,
       photos: ExampleActivityData.photos,
     };
-    this.nextImageHandler = this.nextImageHandler.bind(this);
-    this.prevImageHandler = this.prevImageHandler.bind(this);
+    this.nextImageHandler = nextImageHandler.bind(this);
+    this.prevImageHandler = prevImageHandler.bind(this);
   }
 
   componentDidMount() {
@@ -28,24 +33,6 @@ class App extends React.Component {
       activePhotoIdx: 0,
       photos,
     });
-  }
-
-  nextImageHandler() {
-    const { activePhotoIdx, photos } = this.state;
-    if (activePhotoIdx !== photos.length - 1) {
-      this.setState({
-        activePhotoIdx: activePhotoIdx + 1,
-      });
-    }
-  }
-
-  prevImageHandler() {
-    const { activePhotoIdx } = this.state;
-    if (activePhotoIdx !== 0) {
-      this.setState({
-        activePhotoIdx: activePhotoIdx - 1,
-      });
-    }
   }
 
   render() {
