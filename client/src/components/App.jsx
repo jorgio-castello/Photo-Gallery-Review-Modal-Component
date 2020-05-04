@@ -1,5 +1,12 @@
 import React from 'react';
+
+// Data
 import ExampleActivityData from '../../../ExampleActivityData';
+
+// Helper Functions
+import preloadImages from '../helpers/preloadImages';
+
+// CSS
 import ImageSliderCSS from '../style/ImageSlider.css';
 
 class App extends React.Component {
@@ -15,17 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { photos } = ExampleActivityData;
-    const links = photos.map((photo) => {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'preload');
-      link.setAttribute('as', 'image');
-      link.setAttribute('href', `https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${photo.link}`);
-      return link;
-    });
-
-    links.forEach((link) => {
-      document.head.appendChild(link);
-    });
+    preloadImages(photos);
 
     this.setState({
       activePhotoIdx: 0,
