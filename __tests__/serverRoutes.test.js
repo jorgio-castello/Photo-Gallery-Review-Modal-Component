@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../server');
 
-describe('GET TripAdvisor Gallery Data', () => {
+xdescribe('GET TripAdvisor Gallery Data', () => {
   let activityId;
   beforeEach(() => {
     activityId = Math.floor(Math.random() * 100);
