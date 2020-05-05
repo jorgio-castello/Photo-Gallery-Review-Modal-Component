@@ -17,6 +17,7 @@ class App extends React.Component {
     this.state = {
       activePhotoIdx: 0,
       photos: ExampleActivityData.photos,
+      showGalleryModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
@@ -33,18 +34,27 @@ class App extends React.Component {
   }
 
   render() {
-    const { photos, activePhotoIdx } = this.state;
+    // Grabs the active picture for the ImageSlider component
+    const { photos, activePhotoIdx, showGalleryModal } = this.state;
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
 
+    // Determines whether the modal should be shown
+    const GalleryModal = () => (
+      <div>Hello World</div>
+    );
+
     return (
-      <ImageSlider
-        backgroundImage={imageStyle}
-        alt={alt}
-        count={photos.length}
-        prevImageHandler={this.prevImageHandler}
-        nextImageHandler={this.nextImageHandler}
-      />
+      <>
+        <ImageSlider
+          backgroundImage={imageStyle}
+          alt={alt}
+          count={photos.length}
+          prevImageHandler={this.prevImageHandler}
+          nextImageHandler={this.nextImageHandler}
+        />
+        {showGalleryModal ? <GalleryModal /> : <div />}
+      </>
     );
   }
 }
