@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/extensions
-import ImageSlider from './ImageSlider.jsx';
+import ImageSlider from './ImageSlider';
 
 // Data
 import ExampleActivityData from '../../../ExampleActivityData';
