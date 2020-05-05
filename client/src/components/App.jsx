@@ -16,9 +16,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activity: {},
       activePhotoIdx: 0,
       photos: ExampleActivityData.photos,
-      showGalleryModal: false,
+      showGalleryModal: true,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
@@ -26,18 +27,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const { photos } = ExampleActivityData;
-    preloadImages(photos);
+    const { activity, photos } = ExampleActivityData;
+    // preloadImages(photos);
 
     this.setState({
       activePhotoIdx: 0,
       photos,
+      activity,
     });
   }
 
   render() {
     // Grabs the active picture for the ImageSlider component
-    const { photos, activePhotoIdx, showGalleryModal } = this.state;
+    const { activity, photos, activePhotoIdx, showGalleryModal } = this.state;
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
 
@@ -51,7 +53,13 @@ class App extends React.Component {
           nextImageHandler={this.nextImageHandler}
           showGalleryModalHandler={this.showGalleryModalHandler}
         />
-        {showGalleryModal ? <GalleryModal /> : <div />}
+        {showGalleryModal ? (
+          <GalleryModal
+            name={activity.name}
+            location={activity.location}
+            updateGalleryDisplay={this.showGalleryModalHandler}
+          />
+        ) : <div />}
       </>
     );
   }
