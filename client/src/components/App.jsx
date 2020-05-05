@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
+import GalleryModal from './GalleryModal';
 
 // Data
 import ExampleActivityData from '../../../ExampleActivityData';
@@ -39,11 +40,6 @@ class App extends React.Component {
     const { photos, activePhotoIdx, showGalleryModal } = this.state;
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
-
-    // Determines whether the modal should be shown
-    const GalleryModal = () => (
-      <div>Hello World</div>
-    );
 
     return (
       <>

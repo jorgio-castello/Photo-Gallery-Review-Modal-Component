@@ -6,7 +6,7 @@
 import React from 'react';
 import ImageSliderCSS from '../style/ImageSlider.css';
 
-const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageHandler }) => (
+const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageHandler, showGalleryModalHandler }) => (
   <div style={backgroundImage} className={ImageSliderCSS.container} aria-label={alt}>
     <div className={ImageSliderCSS.prev_button}>
       <button
@@ -32,6 +32,7 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
       <button
         type="button"
         className={ImageSliderCSS.img_count}
+        onClick={showGalleryModalHandler}
       >
         View All Photos (
         {count}
