@@ -8,7 +8,7 @@ import preloadImages from '../helpers/preloadImages';
 // Import Event Handlers
 import eventHandlers from '../helpers/handlers';
 // Destructure Specific Handlers
-const { nextImageHandler, prevImageHandler } = eventHandlers;
+const { nextImageHandler, prevImageHandler, showGalleryModalHandler } = eventHandlers;
 
 
 class App extends React.Component {
@@ -21,6 +21,7 @@ class App extends React.Component {
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
+    this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,7 @@ class App extends React.Component {
           count={photos.length}
           prevImageHandler={this.prevImageHandler}
           nextImageHandler={this.nextImageHandler}
+          showGalleryModalHandler={this.showGalleryModalHandler}
         />
         {showGalleryModal ? <GalleryModal /> : <div />}
       </>

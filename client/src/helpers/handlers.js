@@ -7,7 +7,7 @@ const nextImageHandler = function () {
   }
 };
 
-const prevImageHandler = function() {
+const prevImageHandler = function () {
   const { activePhotoIdx } = this.state;
   if (activePhotoIdx !== 0) {
     this.setState({
@@ -16,8 +16,16 @@ const prevImageHandler = function() {
   }
 };
 
+const showGalleryModalHandler = function () {
+  const { showGalleryModal } = this.state;
+  this.setState({
+    showGalleryModal: !showGalleryModal,
+  }, () => console.log(this.state));
+};
+
 const handlers = {};
 handlers.nextImageHandler = nextImageHandler;
 handlers.prevImageHandler = prevImageHandler;
+handlers.showGalleryModalHandler = showGalleryModalHandler;
 
 export default handlers;
