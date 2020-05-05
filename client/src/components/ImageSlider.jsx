@@ -29,11 +29,14 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
     </div>
 
     <div className={ImageSliderCSS.view_all_button}>
-      <span className={ImageSliderCSS.img_count}>
+      <button
+        type="button"
+        className={ImageSliderCSS.img_count}
+      >
         View All Photos (
         {count}
         )
-      </span>
+      </button>
     </div>
   </div>
 );

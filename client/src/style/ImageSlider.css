@@ -69,8 +69,12 @@
 .img_count {
   height: 2.5vw;
   line-height: 2.5vw;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.8em;
 }
 
-.view_all_button:hover {
+.img_count:hover {
   text-decoration: underline;
 }
