@@ -1,24 +1,76 @@
 .container {
   width: 50vw;
-  border: 1px solid black;
+  height: 35vw;
+  box-shadow: inset 0px 0px 120px 60px rgba(0,0,0,0.4);
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.container:hover {
+  opacity: 0.9;
 }
 
 .prev_button {
-  color: blue;
-  line-height: 32.5vw;
-  margin-left: .5rem;
+  line-height: 35vw;
+  float: left;
 }
 
-.next_button {
+.slider_button_container {
   color: blue;
-  line-height: 32.5vw;
+  line-height: 35vw;
   float: right;
-  margin-right: .5rem;
+}
+
+.slider_button {
+  padding: 1.3rem;
+  background: rgba(0, 0, 0, 0.30);
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.slider_button:focus {outline:0;}
+
+.slider_button:hover {
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.directional_arrow_right {
+  height: 2em;
+  color: white;
+  transform: rotate(-90deg);
+}
+
+.directional_arrow_left {
+  height: 2em;
+  color: white;
+  transform: rotate(90deg);
 }
 
 .view_all_button {
-  display: block;
   line-height: 2.5vw;
   margin-left: .5rem;
+  color: white;
+  font-size: 1.1rem;
+  display: inline;
+  position: absolute;
+  bottom: 0;
+}
+
+.view_all_img {
+  height: 2.5vw;
+  margin-right: .2em;
+  margin-top: .2em;
+  line-height: 2.5vw;
+}
+
+.img_count {
+  height: 2.5vw;
+  line-height: 2.5vw;
+}
+
+.view_all_button:hover {
+  text-decoration: underline;
 }
