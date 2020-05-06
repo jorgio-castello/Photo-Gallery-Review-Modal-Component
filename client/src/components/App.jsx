@@ -28,14 +28,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const { activity, photos } = ExampleActivityData;
-    this.preloadImages(photos);
-
-    this.setState({
-      activePhotoIdx: 0,
-      photos,
-      activity,
-    });
+    const activityId = Math.floor(Math.random() * 100);
+    fetch(`http://127.0.0.1:9999/tripAdvisor/${activityId}/gallery`)
+      .then((res) => res.json())
+      .then((data) => {
+        const { activity, photos } = data;
+        this.preloadImages(photos);
+        this.setState({
+          activePhotoIdx: 0,
+          photos,
+          activity,
+        });
+      });
   }
 
   render() {
