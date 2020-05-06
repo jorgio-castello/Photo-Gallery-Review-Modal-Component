@@ -1,12 +1,12 @@
 .container {
   display: flex;
   height: 27vw;
-  width: 30.25vw;
+  width: 30.5vw;
   background-position: center;
   background-size: cover;
   position: relative;
   overflow: hidden;
-  padding: .1em;
+  padding: .05em;
 }
 
 .photoStyling {
