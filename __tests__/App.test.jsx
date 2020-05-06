@@ -1,18 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import App from '../client/src/components/App';
+import ExampleActivityData from '../ExampleActivityData';
 
 describe('Unit Tests', () => {
-  test('should render the app component on the screen', () => {
-    const wrapper = shallow(<App />);
+  beforeEach(() => {
+    global.fetch = jest.fn(() => Promise.resolve(ExampleActivityData));
+  });
+
+  test('should render the app component on the screen', async () => {
+    const wrapper = await shallow(<App />);
     expect(wrapper).toExist();
   });
 
-  test('should preload images in the browser when the component mounts', () => {
+  test('should fetch images when the component mounts', async () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
-    jest.spyOn(instance, 'preloadImages');
+    jest.spyOn(instance, 'fetchTripAdvisorData');
     instance.componentDidMount();
-    expect(instance.preloadImages).toHaveBeenCalledTimes(1);
+    expect(instance.fetchTripAdvisorData).toHaveBeenCalledTimes(1);
   });
 });

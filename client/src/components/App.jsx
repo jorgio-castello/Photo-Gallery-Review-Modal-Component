@@ -2,9 +2,8 @@ import React from 'react';
 import ImageSlider from './ImageSlider';
 import GalleryModal from './GalleryModal';
 
-// Data
-import ExampleActivityData from '../../../ExampleActivityData';
 // Helper Functions
+import fetchTripAdvisorData from '../helpers/fetchTripAdvisorData';
 import preloadImages from '../helpers/preloadImages';
 // Import Event Handlers
 import eventHandlers from '../helpers/handlers';
@@ -25,13 +24,14 @@ class App extends React.Component {
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
     this.preloadImages = preloadImages;
+    this.fetchTripAdvisorData = fetchTripAdvisorData;
   }
 
   componentDidMount() {
-    const activityId = Math.floor(Math.random() * 100);
-    global.fetch(`http://127.0.0.1:9999/tripAdvisor/${activityId}/gallery`)
-      .then((res) => res.json())
-      .then((data) => {
+    this.fetchTripAdvisorData((err, data) => {
+      if (err) {
+        throw new Error(err);
+      } else {
         const { activity, photos } = data;
         this.preloadImages(photos);
         this.setState({
@@ -39,7 +39,8 @@ class App extends React.Component {
           photos,
           activity,
         });
-      });
+      }
+    });
   }
 
   render() {
