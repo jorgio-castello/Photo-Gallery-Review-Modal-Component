@@ -29,6 +29,7 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
     </div>
 
     <div className={ImageSliderCSS.view_all_button}>
+      <img className={ImageSliderCSS.view_all_img} src="/client/dist/assets/photo-camera.png" alt="View All" />
       <button
         type="button"
         className={ImageSliderCSS.img_count}

@@ -19,7 +19,7 @@ class App extends React.Component {
       activity: {},
       activePhotoIdx: 0,
       photos: ExampleActivityData.photos,
-      showGalleryModal: true,
+      showGalleryModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
