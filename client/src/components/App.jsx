@@ -24,12 +24,11 @@ class App extends React.Component {
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
-    this.preloadImages = preloadImages.bind(this);
   }
 
   componentDidMount() {
     const { activity, photos } = ExampleActivityData;
-    this.preloadImages(photos);
+    preloadImages(photos);
 
     this.setState({
       activePhotoIdx: 0,
