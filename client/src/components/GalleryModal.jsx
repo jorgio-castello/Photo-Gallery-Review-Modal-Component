@@ -19,7 +19,12 @@ const GalleryModal = ({name, location, photos, updateGalleryDisplay}) => (
             className={GalleryModalCSS.exit}
             onClick={updateGalleryDisplay}
           >
-            X
+            <img
+              alt="Close"
+              src="/client/dist/assets/cross-icon.png"
+              height="20px"
+              className={GalleryModalCSS.exitButton}
+            />
           </button>
         </div>
         <div className={GalleryModalCSS.modalGallery}>
