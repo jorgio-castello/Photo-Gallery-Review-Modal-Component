@@ -62,11 +62,13 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  background: none;
+  border: none;
 }
 
 .view_all_img {
   height: 2.5vw;
-  padding-right: .2em;
+  padding-right: .5em;
 }
 
 .img_count {

@@ -28,18 +28,20 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
       </button>
     </div>
 
-    <div className={ImageSliderCSS.view_all_button}>
+    <button
+      className={ImageSliderCSS.view_all_button}
+      type="button"
+      onClick={showGalleryModalHandler}
+    >
       <img className={ImageSliderCSS.view_all_img} src="/client/dist/assets/photo-camera.png" alt="View All" />
-      <button
-        type="button"
+      <span
         className={ImageSliderCSS.img_count}
-        onClick={showGalleryModalHandler}
       >
         View All Photos (
         {count}
         )
-      </button>
-    </div>
+      </span>
+    </button>
   </div>
 );
 
