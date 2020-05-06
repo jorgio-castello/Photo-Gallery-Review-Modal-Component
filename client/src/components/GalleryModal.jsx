@@ -2,7 +2,8 @@ import React from 'react';
 import GalleryModalCSS from '../style/GalleryModal.css';
 import GalleryModalPicture from './GalleryModalPicture';
 
-const GalleryModal = ({name, location, photos, updateGalleryDisplay}) => (
+// eslint-disable-next-line object-curly-newline
+const GalleryModal = ({ name, location, photos, updateGalleryDisplay }) => (
   <>
     <div className={GalleryModalCSS.modalBackground}>
       <div className={GalleryModalCSS.modalContent}>
