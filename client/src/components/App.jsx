@@ -28,7 +28,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { activity, photos } = ExampleActivityData;
-    // preloadImages(photos);
+    preloadImages(photos);
 
     this.setState({
       activePhotoIdx: 0,
@@ -57,6 +57,7 @@ class App extends React.Component {
           <GalleryModal
             name={activity.name}
             location={activity.location}
+            photos={photos}
             updateGalleryDisplay={this.showGalleryModalHandler}
           />
         ) : <div />}

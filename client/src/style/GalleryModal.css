@@ -44,4 +44,6 @@
 
 .modalGallery {
   flex-wrap: wrap;
+  display: column;
+  overflow: scroll;
 }

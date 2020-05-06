@@ -1,7 +1,8 @@
 import React from 'react';
 import GalleryModalCSS from '../style/GalleryModal.css';
+import GalleryModalPicture from './GalleryModalPicture';
 
-const GalleryModal = ({name, location, updateGalleryDisplay}) => (
+const GalleryModal = ({name, location, photos, updateGalleryDisplay}) => (
   <>
     <div className={GalleryModalCSS.modalBackground}>
       <div className={GalleryModalCSS.modalContent}>
@@ -21,7 +22,9 @@ const GalleryModal = ({name, location, updateGalleryDisplay}) => (
             X
           </button>
         </div>
-        <div className={GalleryModalCSS.modalGallery} />
+        <div className={GalleryModalCSS.modalGallery}>
+          {photos.map((photo, index) => <GalleryModalPicture photo={photo} key={index} />)}
+        </div>
       </div>
     </div>
   </>
