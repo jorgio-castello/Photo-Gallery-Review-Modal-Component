@@ -21,7 +21,7 @@ const GalleryModal = ({name, location, photos, updateGalleryDisplay}) => (
           >
             <img
               alt="Close"
-              src="/client/dist/assets/cross-icon.png"
+              src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/cross-icon.png"
               height="20px"
               className={GalleryModalCSS.exitButton}
             />

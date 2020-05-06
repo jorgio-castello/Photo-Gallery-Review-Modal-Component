@@ -14,7 +14,7 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
         className={ImageSliderCSS.slider_button}
         onClick={prevImageHandler}
       >
-        <img className={ImageSliderCSS.directional_arrow_left} src="/client/dist/assets/angle-arrow-down.png" alt="Previous" />
+        <img className={ImageSliderCSS.directional_arrow_left} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Previous" />
       </button>
     </div>
 
@@ -24,7 +24,7 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
         className={ImageSliderCSS.slider_button}
         onClick={nextImageHandler}
       >
-        <img className={ImageSliderCSS.directional_arrow_right} src="/client/dist/assets/angle-arrow-down.png" alt="Next" />
+        <img className={ImageSliderCSS.directional_arrow_right} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Next" />
       </button>
     </div>
 
@@ -33,7 +33,7 @@ const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageH
       type="button"
       onClick={showGalleryModalHandler}
     >
-      <img className={ImageSliderCSS.view_all_img} src="/client/dist/assets/photo-camera.png" alt="View All" />
+      <img className={ImageSliderCSS.view_all_img} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/photo-camera.png" alt="View All" />
       <span
         className={ImageSliderCSS.img_count}
       >
