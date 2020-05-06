@@ -24,11 +24,12 @@ class App extends React.Component {
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
+    this.preloadImages = preloadImages.bind(this);
   }
 
   componentDidMount() {
     const { activity, photos } = ExampleActivityData;
-    preloadImages(photos);
+    this.preloadImages(photos);
 
     this.setState({
       activePhotoIdx: 0,
@@ -39,7 +40,10 @@ class App extends React.Component {
 
   render() {
     // Grabs the active picture for the ImageSlider component
-    const { activity, photos, activePhotoIdx, showGalleryModal } = this.state;
+    const {
+      activity, photos, activePhotoIdx, showGalleryModal,
+    } = this.state;
+
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
 
