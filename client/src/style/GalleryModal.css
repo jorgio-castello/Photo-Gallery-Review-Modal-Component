@@ -41,9 +41,3 @@
 .exit:hover {
   cursor: pointer;
 }
-
-.modalGallery {
-  flex-wrap: wrap;
-  display: column;
-  overflow: scroll;
-}

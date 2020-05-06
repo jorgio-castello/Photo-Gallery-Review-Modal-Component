@@ -1,3 +1,13 @@
+.container {
+  border: 5px solid blue;
+  max-height: 27vw;
+  max-width: 33vw;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
 .photoStyling {
-  max-width: 33%;
+  max-width: 100%;
 }
