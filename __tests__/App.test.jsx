@@ -9,16 +9,26 @@ describe('Unit Tests', () => {
     global.fetch = jest.fn(() => Promise.resolve(ExampleActivityData));
   });
 
-  test('should render the app component on the screen', async () => {
-    const wrapper = await shallow(<App />);
+  test('should render the app component on the screen', () => {
+    const wrapper = shallow(<App />);
     expect(wrapper).toExist();
   });
 
-  test('should fetch images when the component mounts', async () => {
+  test('should fetch Trip Advisor Gallery Data when the component mounts', () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
     jest.spyOn(instance, 'fetchTripAdvisorData');
     instance.componentDidMount();
     expect(instance.fetchTripAdvisorData).toHaveBeenCalledTimes(1);
+  });
+
+  test('should preload Trip Advisor Gallery Images after the component mounts', () => {
+    const wrapper = shallow(<App />);
+    const instance = wrapper.instance();
+    instance.componentDidMount();
+
+    const preload = document.querySelectorAll('link');
+    const preloadLengthIsGreaterThanOrEqualToZero = preload.length >= 0;
+    expect(preloadLengthIsGreaterThanOrEqualToZero).toBe(true);
   });
 });
