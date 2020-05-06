@@ -1,11 +1,12 @@
 .container {
-  border: 5px solid blue;
+  display: flex;
   max-height: 27vw;
-  max-width: 33vw;
+  max-width: 30.25vw;
   background-position: center;
   background-size: cover;
   position: relative;
   overflow: hidden;
+  padding: .1em;
 }
 
 .photoStyling {
