@@ -5,7 +5,8 @@ import GalleryModal from './GalleryModal';
 // Helper Functions
 import fetchTripAdvisorData from '../helpers/fetchTripAdvisorData';
 import preloadImages from '../helpers/preloadImages';
-// Import Event Handlers
+
+// Event Handlers
 import eventHandlers from '../helpers/handlers';
 // Destructure Specific Handlers
 const { nextImageHandler, prevImageHandler, showGalleryModalHandler } = eventHandlers;
@@ -17,7 +18,7 @@ class App extends React.Component {
     this.state = {
       activity: {},
       activePhotoIdx: 0,
-      photos: [{link: ''}],
+      photos: [{ link: '' }],
       showGalleryModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
