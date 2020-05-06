@@ -57,20 +57,30 @@
   display: inline;
   position: absolute;
   bottom: 0;
+  margin-bottom: .5em;
+  padding: .2em;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background: none;
+  border: none;
 }
 
 .view_all_img {
   height: 2.5vw;
-  margin-right: .2em;
-  margin-top: .2em;
-  line-height: 2.5vw;
+  padding-right: .5em;
 }
 
 .img_count {
   height: 2.5vw;
   line-height: 2.5vw;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.8em;
 }
 
 .view_all_button:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
