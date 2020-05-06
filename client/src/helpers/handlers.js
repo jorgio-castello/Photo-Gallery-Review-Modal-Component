@@ -20,7 +20,7 @@ const showGalleryModalHandler = function () {
   const { showGalleryModal } = this.state;
   this.setState({
     showGalleryModal: !showGalleryModal,
-  }, () => console.log(this.state));
+  });
 };
 
 const handlers = {};
