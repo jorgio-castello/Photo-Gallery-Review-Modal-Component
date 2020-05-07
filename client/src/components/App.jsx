@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
-import GalleryModal from './GalleryModal';
+import Modal from './Modal';
 
 // Helper Functions
 import fetchTripAdvisorData from '../helpers/fetchTripAdvisorData';
@@ -64,7 +64,7 @@ class App extends React.Component {
           showGalleryModalHandler={this.showGalleryModalHandler}
         />
         {showGalleryModal ? (
-          <GalleryModal
+          <Modal
             name={activity.name}
             location={activity.location}
             photos={photos}
