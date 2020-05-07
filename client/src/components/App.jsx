@@ -70,6 +70,7 @@ class App extends React.Component {
             name={activity.name}
             location={activity.location}
             photos={photos}
+            shouldShowGalleryModal={showGalleryModal}
             updateGalleryDisplay={this.closeModal}
           />
         ) : <div />}
