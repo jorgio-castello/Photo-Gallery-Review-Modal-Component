@@ -9,7 +9,7 @@ import preloadImages from '../helpers/preloadImages';
 // Event Handlers
 import eventHandlers from '../helpers/handlers';
 // Destructure Specific Handlers
-const { nextImageHandler, prevImageHandler, showGalleryModalHandler } = eventHandlers;
+const { nextImageHandler, prevImageHandler, showGalleryModalHandler, handleImageSliderClick } = eventHandlers;
 
 
 class App extends React.Component {
@@ -24,6 +24,7 @@ class App extends React.Component {
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
+    this.handleImageSliderClick = handleImageSliderClick.bind(this);
     this.preloadImages = preloadImages;
     this.fetchTripAdvisorData = fetchTripAdvisorData;
   }
@@ -59,9 +60,10 @@ class App extends React.Component {
           backgroundImage={imageStyle}
           alt={alt}
           count={photos.length}
-          prevImageHandler={this.prevImageHandler}
-          nextImageHandler={this.nextImageHandler}
-          showGalleryModalHandler={this.showGalleryModalHandler}
+          // prevImageHandler={this.prevImageHandler}
+          // nextImageHandler={this.nextImageHandler}
+          // showGalleryModalHandler={this.showGalleryModalHandler}
+          handleImageSliderClick={this.handleImageSliderClick}
         />
         {showGalleryModal ? (
           <Modal

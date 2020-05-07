@@ -23,9 +23,31 @@ const showGalleryModalHandler = function () {
   });
 };
 
+const handleImageSliderClick = function (e) {
+  let { target } = e;
+  if (target.tagName === 'BUTTON') {
+    [target] = target.childNodes;
+  }
+  if (target.tagName === 'SPAN' || target.getAttribute('alt') === 'View All') {
+    this.showGalleryModalHandler();
+  } else if (target.tagName === 'DIV') {
+    console.log('Hello World');
+  }
+  else {
+    const alt = target.getAttribute('alt');
+    if (alt === 'Previous') {
+      this.prevImageHandler();
+    } else if (alt === 'Next') {
+      this.nextImageHandler();
+    }
+  }
+};
+
+
 const handlers = {};
 handlers.nextImageHandler = nextImageHandler;
 handlers.prevImageHandler = prevImageHandler;
 handlers.showGalleryModalHandler = showGalleryModalHandler;
+handlers.handleImageSliderClick = handleImageSliderClick;
 
 export default handlers;
