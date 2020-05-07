@@ -9,7 +9,7 @@ import preloadImages from '../helpers/preloadImages';
 // Event Handlers
 import eventHandlers from '../helpers/handlers';
 // Destructure Specific Handlers
-const { nextImageHandler, prevImageHandler, showGalleryModalHandler, handleImageSliderClick } = eventHandlers;
+const { nextImageHandler, prevImageHandler, showGalleryModalHandler, showReviewModalHandler, handleImageSliderClick, closeModal } = eventHandlers;
 
 
 class App extends React.Component {
@@ -20,10 +20,13 @@ class App extends React.Component {
       activePhotoIdx: 0,
       photos: [{ link: '' }],
       showGalleryModal: false,
+      showReviewModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
+    this.showReviewModalHandler = showReviewModalHandler.bind(this);
+    this.closeModal = closeModal.bind(this);
     this.handleImageSliderClick = handleImageSliderClick.bind(this);
     this.preloadImages = preloadImages;
     this.fetchTripAdvisorData = fetchTripAdvisorData;
@@ -48,7 +51,7 @@ class App extends React.Component {
   render() {
     // Grabs the active picture for the ImageSlider component
     const {
-      activity, photos, activePhotoIdx, showGalleryModal,
+      activity, photos, activePhotoIdx, showGalleryModal, showReviewModal,
     } = this.state;
 
     const { link, alt } = photos[activePhotoIdx];
@@ -60,17 +63,14 @@ class App extends React.Component {
           backgroundImage={imageStyle}
           alt={alt}
           count={photos.length}
-          // prevImageHandler={this.prevImageHandler}
-          // nextImageHandler={this.nextImageHandler}
-          // showGalleryModalHandler={this.showGalleryModalHandler}
           handleImageSliderClick={this.handleImageSliderClick}
         />
-        {showGalleryModal ? (
+        {showGalleryModal || showReviewModal ? (
           <Modal
             name={activity.name}
             location={activity.location}
             photos={photos}
-            updateGalleryDisplay={this.showGalleryModalHandler}
+            updateGalleryDisplay={this.closeModal}
           />
         ) : <div />}
       </>

@@ -20,6 +20,22 @@ const showGalleryModalHandler = function () {
   const { showGalleryModal } = this.state;
   this.setState({
     showGalleryModal: !showGalleryModal,
+    showReviewModal: false,
+  });
+};
+
+const showReviewModalHandler = function () {
+  const { showReviewModal } = this.state;
+  this.setState({
+    showReviewModal: !showReviewModal,
+    showGalleryModal: false,
+  });
+};
+
+const closeModal = function() {
+  this.setState({
+    showReviewModal: false,
+    showGalleryModal: false,
   });
 };
 
@@ -31,9 +47,8 @@ const handleImageSliderClick = function (e) {
   if (target.tagName === 'SPAN' || target.getAttribute('alt') === 'View All') {
     this.showGalleryModalHandler();
   } else if (target.tagName === 'DIV') {
-    console.log('Hello World');
-  }
-  else {
+    this.showReviewModalHandler();
+  } else {
     const alt = target.getAttribute('alt');
     if (alt === 'Previous') {
       this.prevImageHandler();
@@ -48,6 +63,8 @@ const handlers = {};
 handlers.nextImageHandler = nextImageHandler;
 handlers.prevImageHandler = prevImageHandler;
 handlers.showGalleryModalHandler = showGalleryModalHandler;
+handlers.showReviewModalHandler = showReviewModalHandler;
 handlers.handleImageSliderClick = handleImageSliderClick;
+handlers.closeModal = closeModal;
 
 export default handlers;
