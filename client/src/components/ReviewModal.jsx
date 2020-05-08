@@ -7,6 +7,14 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
   return (
     <div className={ReviewModalCSS.container}>
       <div className={ReviewModalCSS.leftContainer}>
+        <div className={ReviewModalCSS.showGalleryContainer}>
+          <button
+            type="button"
+            className={ReviewModalCSS.showGalleryButton}
+          >
+            Gallery
+          </button>
+        </div>
         <div className={ReviewModalCSS.prev_button}>
           <button
             type="button"
@@ -23,6 +31,7 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
         src={`https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${activePhoto.link}`}
       />
       <div className={ReviewModalCSS.rightContainer}>
+        <div className={ReviewModalCSS.showGalleryContainer}>Add Some Text here</div>
         <div className={ReviewModalCSS.next_button}>
           <button
             type="button"
