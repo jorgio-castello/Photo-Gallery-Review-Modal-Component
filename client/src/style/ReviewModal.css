@@ -9,3 +9,38 @@
 .image {
   width: 50%;
 }
+
+.leftContainer, .rightContainer {
+  width: 25%;
+  display: flex;
+}
+
+.rightContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.prev_button, .next_button {
+  display: flex;
+  justify-content: center;
+}
+
+.slider_button {
+  padding: 1.3rem;
+  background: rgba(0, 0, 0, 0.30);
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.directional_arrow_right {
+  height: 3em;
+  color: white;
+  transform: rotate(-90deg);
+}
+
+.directional_arrow_left {
+  height: 3em;
+  color: white;
+  transform: rotate(90deg);
+}
