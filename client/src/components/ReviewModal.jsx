@@ -1,6 +1,8 @@
 import React from 'react';
 import ReviewModalCSS from '../style/ReviewModal.css';
 
+import Review from './Review';
+
 const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick, showGalleryModal}) => {
   const activePhoto = photos[activePhotoIdx];
 
@@ -51,7 +53,9 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick, showGaller
             </button>
           </div>
         </div>
-        <div className={ReviewModalCSS.reviewComponent}> Hello World </div>
+        <div className={ReviewModalCSS.reviewComponent}>
+          <Review />
+        </div>
       </div>
   );
 };
