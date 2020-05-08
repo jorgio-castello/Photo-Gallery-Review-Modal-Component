@@ -4,7 +4,9 @@ import ReviewCSS from '../style/Review.css';
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showReview: false,
+    };
   }
 
   componentDidMount() {
@@ -27,7 +29,7 @@ class Review extends React.Component {
     const { photos, activePhotoIdx } = this.props;
     const activePhoto = photos[activePhotoIdx];
 
-    let {review_title, review_description, review_helpful_score} = activePhoto;
+    let {review_title, review_description, review_helpful_score, review_stars} = activePhoto;
     if (review_title === "null") {
       review_title = null;
     }
@@ -35,18 +37,37 @@ class Review extends React.Component {
       review_description = null;
     }
 
-    return [review_title, review_description, review_helpful_score];
+    return [review_title, review_description, review_helpful_score, review_stars];
   }
 
   render() {
     const [user, firstLetter] = this.setUsernameAndLetter();
-    const [review_title, review_description, review_helpful_score] = this.checkForReview();
+    const [review_title, review_description, review_helpful_score, review_stars] = this.checkForReview();
 
     return (
       <div className={ReviewCSS.container}>
         <div className={ReviewCSS.emblem}><span className={ReviewCSS.emblemLetter}>{firstLetter}</span></div>
         <div className={ReviewCSS.username}>{user}</div>
-        {review_title ? <div className={ReviewCSS.title}>{review_title}</div> : <div />}
+        {review_title && !review_description ? <div className={ReviewCSS.title}>{review_title}</div> : <div />}
+        {review_description
+          ? (
+            <>
+              <div className={ReviewCSS.starsAndDescriptionContainer}>
+                <div className={ReviewCSS.starsContainer}>
+                  <div className={ReviewCSS.star} />
+                  <div className={ReviewCSS.star} />
+                  <div className={ReviewCSS.star} />
+                  <div className={ReviewCSS.star} />
+                  <div className={ReviewCSS.star} />
+                </div>
+                <div className={ReviewCSS.descriptionShort}>
+                  {`${review_description.slice(0, 150)}...`}
+                </div>
+              </div>
+              <button className={ReviewCSS.readReviewButton} type="button">Read Review</button>
+            </>
+          )
+          : <div />}
         {review_helpful_score
           ? (
             <div className={ReviewCSS.footer}>

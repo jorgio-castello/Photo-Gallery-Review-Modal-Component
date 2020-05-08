@@ -89,3 +89,41 @@
   color: green;
   cursor: pointer;
 }
+
+.starsAndDescriptionContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-top: 1em;
+}
+
+.starsContainer {
+  max-width: 5em;
+  display: inline-flex;
+  margin-right: .5em;
+}
+
+.star {
+  width: .75em;
+  height: .75em;
+  margin-right: .1em;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: inline-flex;
+}
+
+.descriptionShort {
+  display: inline;
+  line-height: 1em;
+  margin: none;
+  padding: none;
+}
+
+.readReviewButton {
+  border: none;
+  background: none;
+  color: white;
+  font-size: .8em;
+  margin-top: 1em;
+  padding: 0 !important;
+}
