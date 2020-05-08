@@ -5,14 +5,14 @@ import GalleryModal from './GalleryModal';
 import ReviewModal from './ReviewModal';
 
 // eslint-disable-next-line object-curly-newline
-const Modal = ({ name, location, activePhotoIdx, photos, updateGalleryDisplay, shouldShowGalleryModal, handleImageSliderClick }) => (
+const Modal = ({ name, location, activePhotoIdx, photos, updateGalleryDisplay, shouldShowGalleryModal, handleImageSliderClick, showGalleryModal, showReviewModal }) => (
   <>
     <div className={ModalCSS.modalBackground}>
       <div className={ModalCSS.modalContent}>
         <ModalHeader name={name} location={location} updateGalleryDisplay={updateGalleryDisplay} />
         {shouldShowGalleryModal
           ? <GalleryModal photos={photos} />
-          : <ReviewModal photos={photos} activePhotoIdx={activePhotoIdx} handleImageSliderClick={handleImageSliderClick} />}
+          : <ReviewModal photos={photos} activePhotoIdx={activePhotoIdx} handleImageSliderClick={handleImageSliderClick} showGalleryModal={showGalleryModal} />}
       </div>
     </div>
   </>

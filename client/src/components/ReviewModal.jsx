@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewModalCSS from '../style/ReviewModal.css';
 
-const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
+const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick, showGalleryModal}) => {
   const activePhoto = photos[activePhotoIdx];
 
   return (
@@ -11,6 +11,7 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
           <button
             type="button"
             className={ReviewModalCSS.showGalleryButton}
+            onClick={showGalleryModal}
           >
             Gallery
           </button>
@@ -31,7 +32,15 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
         src={`https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${activePhoto.link}`}
       />
       <div className={ReviewModalCSS.rightContainer}>
-        <div className={ReviewModalCSS.showGalleryContainer}>Add Some Text here</div>
+        <div className={ReviewModalCSS.showStatsContainer}>
+          <span className={ReviewModalCSS.activityPhotoStats}>
+            {activePhotoIdx + 1}
+            {' '}
+            of
+            {' '}
+            {photos.length}
+          </span>
+        </div>
         <div className={ReviewModalCSS.next_button}>
           <button
             type="button"
