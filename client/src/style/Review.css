@@ -127,3 +127,9 @@
   margin-top: 1em;
   padding: 0 !important;
 }
+
+.reviewContainer {
+  width: 100%;
+  background: white;
+
+}

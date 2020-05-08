@@ -7,9 +7,7 @@ class Review extends React.Component {
     this.state = {
       showReview: false,
     };
-  }
-
-  componentDidMount() {
+    this.handleReadReviewClick = this.handleReadReviewClick.bind(this);
   }
 
   setUsernameAndLetter() {
@@ -24,6 +22,14 @@ class Review extends React.Component {
 
     return [user, firstLetter];
   }
+
+  handleReadReviewClick() {
+    const { showReview } = this.state;
+    this.setState({
+      showReview: !showReview,
+    });
+  }
+
 
   checkForReview() {
     const { photos, activePhotoIdx } = this.props;
@@ -43,6 +49,7 @@ class Review extends React.Component {
   render() {
     const [user, firstLetter] = this.setUsernameAndLetter();
     const [review_title, review_description, review_helpful_score, review_stars] = this.checkForReview();
+    const { showReview } = this.state;
 
     return (
       <div className={ReviewCSS.container}>
@@ -64,7 +71,7 @@ class Review extends React.Component {
                   {`${review_description.slice(0, 150)}...`}
                 </div>
               </div>
-              <button className={ReviewCSS.readReviewButton} type="button">Read Review</button>
+              <button onClick={this.handleReadReviewClick} className={ReviewCSS.readReviewButton} type="button">Read Review</button>
             </>
           )
           : <div />}
@@ -96,13 +103,3 @@ class Review extends React.Component {
 }
 
 export default Review;
-
-// link: "image-jknepp-yAJYEZ3S2KY.jpg"
-// alt: "provident nulla et"
-// user: "Management"
-// user_contributions: null
-// date_created: "2010-01-17T08:00:00.000Z"
-// review_title: "et et laborum"
-// review_description: "null"
-// review_stars: null
-// review_helpful_score: 8
