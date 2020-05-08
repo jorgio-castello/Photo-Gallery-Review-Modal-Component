@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewModalCSS from '../style/ReviewModal.css';
 
-const ReviewModal = ({photos, activePhotoIdx}) => {
+const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick}) => {
   const activePhoto = photos[activePhotoIdx];
 
   return (
@@ -11,7 +11,7 @@ const ReviewModal = ({photos, activePhotoIdx}) => {
           <button
             type="button"
             className={ReviewModalCSS.slider_button}
-            // onClick={this.handleClick}
+            onClick={handleImageSliderClick}
           >
             <img className={ReviewModalCSS.directional_arrow_left} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Previous" />
           </button>
@@ -27,7 +27,7 @@ const ReviewModal = ({photos, activePhotoIdx}) => {
           <button
             type="button"
             className={ReviewModalCSS.slider_button}
-            // onClick={this.handleClick}
+            onClick={handleImageSliderClick}
           >
             <img className={ReviewModalCSS.directional_arrow_right} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Next" />
           </button>

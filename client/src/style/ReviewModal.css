@@ -44,3 +44,5 @@
   color: white;
   transform: rotate(90deg);
 }
+
+.slider_button:focus {outline:0;}

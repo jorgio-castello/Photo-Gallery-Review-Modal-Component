@@ -72,6 +72,7 @@ class App extends React.Component {
             activePhotoIdx={activePhotoIdx}
             photos={photos}
             shouldShowGalleryModal={showGalleryModal}
+            handleImageSliderClick={this.handleImageSliderClick}
             updateGalleryDisplay={this.closeModal}
           />
         ) : <div />}
