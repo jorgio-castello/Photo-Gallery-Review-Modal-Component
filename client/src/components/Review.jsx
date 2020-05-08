@@ -41,10 +41,10 @@ class Review extends React.Component {
   render() {
     const [user, firstLetter] = this.setUsernameAndLetter();
     const [review_title, review_description, review_helpful_score] = this.checkForReview();
-    console.log(this.props);
+
     return (
       <div className={ReviewCSS.container}>
-        <div className={ReviewCSS.emblem}>{firstLetter}</div>
+        <div className={ReviewCSS.emblem}><span className={ReviewCSS.emblemLetter}>{firstLetter}</span></div>
         <div className={ReviewCSS.username}>{user}</div>
         {review_title ? <div className={ReviewCSS.title}>{review_title}</div> : <div />}
         {review_helpful_score
@@ -62,7 +62,7 @@ class Review extends React.Component {
                 </button>
                 <div className={ReviewCSS.footerContentRight}>
                   <button type="button" className={ReviewCSS.saveTrip}>SaveTrip</button>
-                  <button type="button" className={ReviewCSS.reportPhoto}>Report Photo</button>
+                  <button type="button" className={ReviewCSS.reportPhoto}>ReportPhoto</button>
                 </div>
                 <div className={ReviewCSS.footerActions} />
               </div>
