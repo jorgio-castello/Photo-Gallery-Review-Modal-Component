@@ -8,8 +8,14 @@ class Review extends React.Component {
   }
 
   render() {
+    const { activePhoto } = this.props;
+    console.log(activePhoto);
+
     return (
-      <div className={ReviewCSS.container}>Hello World</div>
+      <div className={ReviewCSS.container}>
+        <div className={ReviewCSS.emblem}></div>
+        <div className={ReviewCSS.username}></div>
+      </div>
     );
   }
 }

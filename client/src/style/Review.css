@@ -3,4 +3,21 @@
   background:rgba(0,0,0,0.5);
   height: 8.5em;
   color: white;
+  padding: 1em;
+}
+
+.emblem {
+  display: inline-flex;
+  border: 1px solid white;
+  padding: .8em;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+
+.username {
+  display: inline-flex;
+  font-size: 0.8em;
+  margin-left: .5em;
 }
