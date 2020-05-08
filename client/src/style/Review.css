@@ -1,7 +1,6 @@
 .container {
   box-shadow: 3px -15px 8px 8px rgba(0,0,0,0.5);
   background:rgba(0,0,0,0.5);
-  height: 8.5em;
   color: white;
   padding: 1em;
 }
@@ -20,4 +19,66 @@
   display: inline-flex;
   font-size: 0.8em;
   margin-left: .5em;
+  color: white;
+}
+
+.title {
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+.footer {
+  border-top: 1px solid white;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.footerContent {
+  padding-top: 1em;
+}
+
+.helpfulScore {
+  font-size: 0.8em;
+  width: 10%;
+  height: 2em;
+  line-height: 2em;
+  background: none;
+  color: white;
+  display: inline-flex;
+  border: none;
+}
+
+.helpfulScore:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.thumbs_up {
+  width: 1.5em;
+  margin-right: 0.5em;
+  border: blue;
+}
+
+.footerContentRight {
+  color: white;
+  float: right;
+  height: 2em;
+  line-height: 2em;
+}
+
+.saveTrip, .reportPhoto {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.9em;
+}
+
+.saveTrip:hover {
+  color: pink;
+  cursor: pointer;
+}
+
+.reportPhoto:hover {
+  color: green;
+  cursor: pointer;
 }

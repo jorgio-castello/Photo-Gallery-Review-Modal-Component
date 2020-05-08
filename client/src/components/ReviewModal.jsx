@@ -54,7 +54,7 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick, showGaller
           </div>
         </div>
         <div className={ReviewModalCSS.reviewComponent}>
-          <Review activePhoto={activePhoto}/>
+          <Review photos={photos} activePhotoIdx={activePhotoIdx} />
         </div>
       </div>
   );
