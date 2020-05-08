@@ -29,7 +29,6 @@ const showReviewModalHandler = function (e) {
 
   if (e) {
     activePhotoIdx = e.target.getAttribute('id');
-    console.log(activePhotoIdx);
   }
   this.setState({
     showReviewModal: !showReviewModal,

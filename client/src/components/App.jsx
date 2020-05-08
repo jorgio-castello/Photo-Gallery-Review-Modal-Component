@@ -53,7 +53,6 @@ class App extends React.Component {
     const {
       activity, photos, activePhotoIdx, showGalleryModal, showReviewModal,
     } = this.state;
-    console.log(activePhotoIdx);
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
 
