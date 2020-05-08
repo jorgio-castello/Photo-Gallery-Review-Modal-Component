@@ -11,7 +11,7 @@ const Modal = ({ name, location, activePhotoIdx, photos, updateGalleryDisplay, s
       <div className={ModalCSS.modalContent}>
         <ModalHeader name={name} location={location} updateGalleryDisplay={updateGalleryDisplay} />
         {shouldShowGalleryModal
-          ? <GalleryModal photos={photos} />
+          ? <GalleryModal photos={photos} showReviewModal={showReviewModal} />
           : <ReviewModal photos={photos} activePhotoIdx={activePhotoIdx} handleImageSliderClick={handleImageSliderClick} showGalleryModal={showGalleryModal} />}
       </div>
     </div>

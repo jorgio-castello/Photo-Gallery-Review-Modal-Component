@@ -34,7 +34,7 @@ const ReviewModal = ({photos, activePhotoIdx, handleImageSliderClick, showGaller
       <div className={ReviewModalCSS.rightContainer}>
         <div className={ReviewModalCSS.showStatsContainer}>
           <span className={ReviewModalCSS.activityPhotoStats}>
-            {activePhotoIdx + 1}
+            {Number(activePhotoIdx + 1)}
             {' '}
             of
             {' '}

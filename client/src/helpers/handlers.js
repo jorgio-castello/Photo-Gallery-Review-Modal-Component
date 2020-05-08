@@ -2,7 +2,7 @@ const nextImageHandler = function () {
   const { activePhotoIdx, photos } = this.state;
   if (activePhotoIdx !== photos.length - 1) {
     this.setState({
-      activePhotoIdx: activePhotoIdx + 1,
+      activePhotoIdx: Number(activePhotoIdx) + 1,
     });
   }
 };
@@ -11,7 +11,7 @@ const prevImageHandler = function () {
   const { activePhotoIdx } = this.state;
   if (activePhotoIdx !== 0) {
     this.setState({
-      activePhotoIdx: activePhotoIdx - 1,
+      activePhotoIdx: Number(activePhotoIdx) - 1,
     });
   }
 };
@@ -24,11 +24,17 @@ const showGalleryModalHandler = function () {
   });
 };
 
-const showReviewModalHandler = function () {
-  const { showReviewModal } = this.state;
+const showReviewModalHandler = function (e) {
+  let { showReviewModal, activePhotoIdx } = this.state;
+
+  if (e) {
+    activePhotoIdx = e.target.getAttribute('id');
+    console.log(activePhotoIdx);
+  }
   this.setState({
     showReviewModal: !showReviewModal,
     showGalleryModal: false,
+    activePhotoIdx,
   });
 };
 
