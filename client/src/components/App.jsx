@@ -8,8 +8,12 @@ import preloadImages from '../helpers/preloadImages';
 
 // Event Handlers
 import eventHandlers from '../helpers/handlers';
+
 // Destructure Specific Handlers
-const { nextImageHandler, prevImageHandler, showGalleryModalHandler, showReviewModalHandler, handleImageSliderClick, closeModal } = eventHandlers;
+const {
+  nextImageHandler, prevImageHandler, showGalleryModalHandler,
+  showReviewModalHandler, handleImageSliderClick, closeModal,
+} = eventHandlers;
 
 
 class App extends React.Component {
@@ -32,6 +36,10 @@ class App extends React.Component {
     this.fetchTripAdvisorData = fetchTripAdvisorData;
   }
 
+  // When the gallery component mounts,
+  // 1. activity data is fetched,
+  // 2. images are pre-loaded in the browser, and
+  // 3. state is initialized
   componentDidMount() {
     this.fetchTripAdvisorData((err, data) => {
       if (err) {
@@ -64,7 +72,7 @@ class App extends React.Component {
           count={photos.length}
           handleImageSliderClick={this.handleImageSliderClick}
         />
-        {showGalleryModal || showReviewModal ? (
+        {showGalleryModal || showReviewModal ? ( // Dynamically renders a modal component
           <Modal
             name={activity.name}
             location={activity.location}
