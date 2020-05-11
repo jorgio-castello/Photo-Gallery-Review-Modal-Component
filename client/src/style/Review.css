@@ -112,6 +112,11 @@
   display: inline-flex;
 }
 
+.positiveStar {
+  background: green;
+  border: 1px solid green;
+}
+
 .descriptionShort {
   display: inline;
   line-height: 1em;
