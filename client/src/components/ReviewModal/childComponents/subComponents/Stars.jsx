@@ -17,7 +17,8 @@ const Stars = ({ stars }) => {
     <div className={ReviewCSS.starsContainer}>
       {starsArr.map((star, index) => (
         // The className ternary will determine if star should be displayed as positive / neutral
-        <div className={index + 1 <= stars ? positiveStar : neutralStar} />
+        // eslint-disable-next-line react/no-array-index-key
+        <div key={star + index} className={index + 1 <= stars ? positiveStar : neutralStar} />
       ))}
     </div>
   );
