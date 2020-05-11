@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Child Components
-import ContainerLeft from './childComponents/ContainerLeft';
-import ContainerRight from './childComponents/ContainerRight';
+import ContainerLeft from './Containers/ContainerLeft';
+import ContainerRight from './Containers/ContainerRight';
 import Review from './childComponents/Review';
 
 // CSS styling

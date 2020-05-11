@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import ReviewCSS from '../../../style/Review.css';
-import Emblem from './Emblem';
-import StarsAndDescription from './StarsAndDescription';
-import ReviewFooter from './ReviewFooter';
+import Emblem from './subComponents/Emblem';
+import StarsAndDescription from './subComponents/StarsAndDescription';
+import ReviewFooter from './subComponents/ReviewFooter';
 
 import reviewHelpers from '../Helpers';
 

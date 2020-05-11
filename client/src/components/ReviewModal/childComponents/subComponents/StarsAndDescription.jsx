@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReviewCSS from '../../../style/Review.css';
+import ReviewCSS from '../../../../style/Review.css';
 import Stars from './Stars';
 
 const StarsAndDescription = ({ stars, description, handleReadReviewClick }) => (
