@@ -58,7 +58,8 @@ Modal.propTypes = {
   name: PropTypes.string,
   location: PropTypes.string,
   activePhotoIdx: PropTypes.number,
-  photos: PropTypes.shape([]),
+  // eslint-disable-next-line react/forbid-prop-types
+  photos: PropTypes.array,
   closeModal: PropTypes.func,
   shouldShowGalleryModal: PropTypes.bool,
   handleImageSliderClick: PropTypes.func,

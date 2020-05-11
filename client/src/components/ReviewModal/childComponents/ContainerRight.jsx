@@ -40,7 +40,8 @@ ContainerRight.defaultProps = {
 };
 
 ContainerRight.propTypes = {
-  photos: PropTypes.shape([]),
+  // eslint-disable-next-line react/forbid-prop-types
+  photos: PropTypes.array,
   activePhotoIdx: PropTypes.number,
   handleImageSliderClick: PropTypes.func,
 };
