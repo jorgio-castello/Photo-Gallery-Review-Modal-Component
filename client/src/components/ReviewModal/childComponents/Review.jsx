@@ -18,10 +18,8 @@ class Review extends React.Component {
   }
 
   handleReadReviewClick() {
-    const { showReview } = this.state;
-    this.setState({
-      showReview: !showReview,
-    });
+    const { displayReviewSlider } = this.props;
+    displayReviewSlider();
   }
 
   render() {
