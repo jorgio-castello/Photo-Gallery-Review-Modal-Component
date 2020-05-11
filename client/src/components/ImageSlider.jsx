@@ -34,12 +34,14 @@ class ImageSlider extends React.Component {
     this.setState({
       isImageHovered: true,
     });
+    document.querySelector('#container').classList.add(ImageSliderCSS.containerHover);
   }
 
   handleHoverOut() {
     this.setState({
       isImageHovered: false,
     });
+    document.querySelector('#container').classList.remove(ImageSliderCSS.containerHover);
   }
 
   render() {
@@ -59,12 +61,15 @@ class ImageSlider extends React.Component {
         onKeyPress={() => {}}
         onMouseEnter={this.handleHoverIn}
         onMouseLeave={this.handleHoverOut}
+        id="container"
       >
         <div className={ImageSliderCSS.prev_button}>
           <button // Button that includes an arrow icon img to go to the previous image
             type="button"
             className={ImageSliderCSS.slider_button}
             onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
           >
             <img
               className={ImageSliderCSS.directional_arrow_left}
@@ -74,13 +79,15 @@ class ImageSlider extends React.Component {
           </button>
         </div>
 
-        { isImageHovered ? <div className={ImageSliderCSS.fullView}><span>Full View</span></div> : <div /> }
+        { isImageHovered ? <div id="fullView" className={ImageSliderCSS.fullView}><span>Full View</span></div> : <div /> }
 
         <div className={ImageSliderCSS.slider_button_container}>
           <button // Button that includes an arrow icon img to go to the next image
             type="button"
             className={ImageSliderCSS.slider_button}
             onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
           >
             <img
               className={ImageSliderCSS.directional_arrow_right}
@@ -90,24 +97,28 @@ class ImageSlider extends React.Component {
           </button>
         </div>
 
-        <button // Button that allows a user to view the Gallery Modal for all of the images
-          className={ImageSliderCSS.view_all_button}
-          type="button"
-          onClick={this.handleClick}
-        >
-          <img
-            className={ImageSliderCSS.view_all_img}
-            src={cameraIcon}
-            alt="View Gallery"
-          />
-          <span
-            className={ImageSliderCSS.img_count}
+        <div className={ImageSliderCSS.view_all_button_div}>
+          <button // Button that allows a user to view the Gallery Modal for all of the images
+            className={ImageSliderCSS.view_all_button}
+            type="button"
+            onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
           >
-            View All Photos (
-            {imageCount}
-            )
-          </span>
-        </button>
+            <img
+              className={ImageSliderCSS.view_all_img}
+              src={cameraIcon}
+              alt="View Gallery"
+            />
+            <span
+              className={ImageSliderCSS.img_count}
+            >
+              View All Photos (
+              {imageCount}
+              )
+            </span>
+          </button>
+        </div>
       </div>
     );
   }
