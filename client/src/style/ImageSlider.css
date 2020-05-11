@@ -90,17 +90,18 @@
 }
 
 .view_all_img {
-  height: 2.5vw;
+  height: 2vw;
   padding-right: .5em;
 }
 
 .img_count {
-  height: 2.5vw;
-  line-height: 2.5vw;
+  height: 2vw;
+  line-height: 2vw;
   background: none;
   border: none;
   color: white;
-  font-size: 0.8em;
+  font-size: 1em;
+  font-family: 'Roboto';
 }
 
 .view_all_button:hover {
@@ -121,9 +122,11 @@
 .fullView span {
   color: white;
   background: rgba(0, 0, 0, 0.50);
-  padding: 1.5em 2.5em;
+  padding: 1.2em;
   border-radius: 5px;
   animation: fadein .5s;
+  font-family: 'Roboto';
+  font-size: 1.2em;
 }
 
 .fade-exit {
