@@ -10,6 +10,15 @@
   transition: opacity .5s ease-out;
 }
 
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .containerHover {
   opacity: 0.9;
   cursor: pointer;
