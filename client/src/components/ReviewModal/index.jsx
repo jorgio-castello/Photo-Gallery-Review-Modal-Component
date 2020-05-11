@@ -16,45 +16,87 @@ import awsS3Links from '../../../../AmazonS3Links';
 const { awsBaseUrl } = awsS3Links;
 
 // -------------------------------------------------------------------------------------------------
-const ReviewModal = (
-  {
-    photos, activePhotoIdx, // array of photos, and the active photoIdx
-    handleImageSliderClick, showGalleryModal, // Handlers to change active image, show gallery modal
-  },
-) => {
-  const activePhoto = photos[activePhotoIdx];
+class ReviewModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showReviewSlider: false,
+    };
+    this.displayReviewSlider = this.displayReviewSlider.bind(this);
+    this.hideReviewSlider = this.hideReviewSlider.bind(this);
+    document.querySelector('body').addEventListener('click', () => this.setState({showReviewSlider: false }));
+  }
 
-  return (
-    <>
-      <div className={ReviewModalCSS.container}>
+  componentWillRender() {
+    this.setState({
+      showReviewSlider: false,
+    });
+  }
 
-        <ContainerLeft // Contains buttons on left-side of the ReviewModal component
-          showGalleryModal={showGalleryModal}
-          handleImageSliderClick={handleImageSliderClick}
-        />
+  displayReviewSlider() {
+    this.setState({
+      showReviewSlider: true,
+    });
+  }
 
-        {/* Primary content of the page: current image */}
-        <img
-          className={ReviewModalCSS.image}
-          alt={activePhoto.alt}
-          src={`${awsBaseUrl}/${activePhoto.link}`}
-        />
+  hideReviewSlider() {
+    this.setState({
+      showReviewSlider: false,
+    });
+  }
 
-        <ContainerRight // Contains information / buttons on right-side of the ReviewModal component
-          activePhotoIdx={activePhotoIdx}
-          photos={photos}
-          handleImageSliderClick={handleImageSliderClick}
-        />
+  render() {
+    const {
+      photos, activePhotoIdx, // array of photos, and the active photoIdx
+      handleImageSliderClick, showGalleryModal, // Event handlers
+    } = this.props;
+    const { showReviewSlider } = this.state;
+    const activePhoto = photos[activePhotoIdx];
 
-        {/* Displays relevant information about the review associated with this phot */}
-        <div className={ReviewModalCSS.reviewComponent}>
-          <Review photos={photos} activePhotoIdx={activePhotoIdx} />
+    return (
+      <>
+        <div className={ReviewModalCSS.container}>
+
+          <ContainerLeft // Contains buttons on left-side of the ReviewModal component
+            showGalleryModal={showGalleryModal}
+            handleImageSliderClick={handleImageSliderClick}
+          />
+
+          {/* Primary content of the page: current image */}
+          <img
+            className={ReviewModalCSS.image}
+            alt={activePhoto.alt}
+            src={`${awsBaseUrl}/${activePhoto.link}`}
+          />
+
+          {/* Contains information / buttons on right-side of the ReviewModal component */}
+          <ContainerRight
+            activePhotoIdx={activePhotoIdx}
+            photos={photos}
+            handleImageSliderClick={handleImageSliderClick}
+          />
+
+          {/* Displays relevant information about the review associated with this phot */}
+          <div className={ReviewModalCSS.reviewComponent}>
+            <Review
+              photos={photos}
+              activePhotoIdx={activePhotoIdx}
+              displayReviewSlider={this.displayReviewSlider}
+            />
+          </div>
+
+          { showReviewSlider ? (
+            <ReviewSlider
+              photos={photos}
+              activePhotoIdx={activePhotoIdx}
+              hideReviewSlider={this.hideReviewSlider}
+          />
+          )
+            : <div />}
         </div>
-
-        <ReviewSlider photos={photos} activePhotoIdx={activePhotoIdx} />
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 };
 
 ReviewModal.defaultProps = {
