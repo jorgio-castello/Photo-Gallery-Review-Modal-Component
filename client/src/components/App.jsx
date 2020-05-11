@@ -1,14 +1,19 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
-import GalleryModal from './GalleryModal';
+import Modal from './Modal';
 
 // Helper Functions
 import fetchTripAdvisorData from '../helpers/fetchTripAdvisorData';
 import preloadImages from '../helpers/preloadImages';
-// Import Event Handlers
+
+// Event Handlers
 import eventHandlers from '../helpers/handlers';
+
 // Destructure Specific Handlers
-const { nextImageHandler, prevImageHandler, showGalleryModalHandler } = eventHandlers;
+const {
+  nextImageHandler, prevImageHandler, showGalleryModalHandler,
+  showReviewModalHandler, handleImageSliderClick, closeModal,
+} = eventHandlers;
 
 
 class App extends React.Component {
@@ -17,16 +22,24 @@ class App extends React.Component {
     this.state = {
       activity: {},
       activePhotoIdx: 0,
-      photos: [{link: ''}],
+      photos: [{ link: '' }],
       showGalleryModal: false,
+      showReviewModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
     this.showGalleryModalHandler = showGalleryModalHandler.bind(this);
+    this.showReviewModalHandler = showReviewModalHandler.bind(this);
+    this.closeModal = closeModal.bind(this);
+    this.handleImageSliderClick = handleImageSliderClick.bind(this);
     this.preloadImages = preloadImages;
     this.fetchTripAdvisorData = fetchTripAdvisorData;
   }
 
+  // When the gallery component mounts,
+  // 1. activity data is fetched,
+  // 2. images are pre-loaded in the browser, and
+  // 3. state is initialized
   componentDidMount() {
     this.fetchTripAdvisorData((err, data) => {
       if (err) {
@@ -46,9 +59,8 @@ class App extends React.Component {
   render() {
     // Grabs the active picture for the ImageSlider component
     const {
-      activity, photos, activePhotoIdx, showGalleryModal,
+      activity, photos, activePhotoIdx, showGalleryModal, showReviewModal,
     } = this.state;
-
     const { link, alt } = photos[activePhotoIdx];
     const imageStyle = { backgroundImage: `url(https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/${link})` };
 
@@ -57,17 +69,20 @@ class App extends React.Component {
         <ImageSlider
           backgroundImage={imageStyle}
           alt={alt}
-          count={photos.length}
-          prevImageHandler={this.prevImageHandler}
-          nextImageHandler={this.nextImageHandler}
-          showGalleryModalHandler={this.showGalleryModalHandler}
+          imageCount={photos.length}
+          handleImageSliderClick={this.handleImageSliderClick}
         />
-        {showGalleryModal ? (
-          <GalleryModal
+        {showGalleryModal || showReviewModal ? ( // Dynamically renders a modal component
+          <Modal
             name={activity.name}
             location={activity.location}
+            activePhotoIdx={activePhotoIdx}
             photos={photos}
-            updateGalleryDisplay={this.showGalleryModalHandler}
+            shouldShowGalleryModal={showGalleryModal}
+            showGalleryModal={this.showGalleryModalHandler}
+            showReviewModal={this.showReviewModalHandler}
+            handleImageSliderClick={this.handleImageSliderClick}
+            closeModal={this.closeModal}
           />
         ) : <div />}
       </>

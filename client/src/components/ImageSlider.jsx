@@ -1,48 +1,146 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import ImageSliderCSS from '../style/ImageSlider.css';
 
-const ImageSlider = ({ backgroundImage, alt, count, prevImageHandler, nextImageHandler, showGalleryModalHandler }) => (
-  <div style={backgroundImage} className={ImageSliderCSS.container} aria-label={alt}>
-    <div className={ImageSliderCSS.prev_button}>
-      <button
-        type="button"
-        className={ImageSliderCSS.slider_button}
-        onClick={prevImageHandler}
-      >
-        <img className={ImageSliderCSS.directional_arrow_left} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Previous" />
-      </button>
-    </div>
+// Import AWS S3 Links
+import awsS3Links from '../../../AmazonS3Links';
+// Destrcture awsS3Links
+const { arrowIcon, cameraIcon, diagonalArrows } = awsS3Links;
 
-    <div className={ImageSliderCSS.slider_button_container}>
-      <button
-        type="button"
-        className={ImageSliderCSS.slider_button}
-        onClick={nextImageHandler}
-      >
-        <img className={ImageSliderCSS.directional_arrow_right} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/angle-arrow-down.png" alt="Next" />
-      </button>
-    </div>
+class ImageSlider extends React.Component {
+  constructor(props) {
+    super(props);
 
-    <button
-      className={ImageSliderCSS.view_all_button}
-      type="button"
-      onClick={showGalleryModalHandler}
-    >
-      <img className={ImageSliderCSS.view_all_img} src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Icons/photo-camera.png" alt="View All" />
-      <span
-        className={ImageSliderCSS.img_count}
+    this.state = {
+      isImageHovered: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleHoverIn = this.handleHoverIn.bind(this);
+    this.handleHoverOut = this.handleHoverOut.bind(this);
+
+    // Destructure props event handlers
+    const { handleImageSliderClick } = this.props;
+    this.handleImageSliderClick = handleImageSliderClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.handleImageSliderClick(e);
+  }
+
+  handleHoverIn() {
+    this.setState({
+      isImageHovered: true,
+    });
+    document.querySelector('#container').classList.add(ImageSliderCSS.containerHover);
+  }
+
+  handleHoverOut() {
+    this.setState({
+      isImageHovered: false,
+    });
+    document.querySelector('#container').classList.remove(ImageSliderCSS.containerHover);
+  }
+
+  render() {
+    // Destructure props static data
+    const { backgroundImage, imageCount } = this.props;
+    const { isImageHovered } = this.state;
+
+    return (
+      // * Accessibility features to implemenet: ability to focus Image Click with tab keypress *
+      // eslint-disable-next-line jsx-a11y/interactive-supports-focus
+      <div // Clickable div that features a background image for the current picture
+        role="button"
+        style={backgroundImage}
+        className={ImageSliderCSS.container}
+        aria-label="Click to View Image Modal"
+        onClick={this.handleClick}
+        onKeyPress={() => {}}
+        onMouseEnter={this.handleHoverIn}
+        onMouseLeave={this.handleHoverOut}
+        id="container"
       >
-        View All Photos (
-        {count}
+        <div className={ImageSliderCSS.prev_button}>
+          <button // Button that includes an arrow icon img to go to the previous image
+            type="button"
+            className={ImageSliderCSS.slider_button}
+            onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
+          >
+            <img
+              className={ImageSliderCSS.directional_arrow_left}
+              src={arrowIcon}
+              alt="Previous"
+            />
+          </button>
+        </div>
+
+        { isImageHovered ? (
+          <div id="fullView" className={ImageSliderCSS.fullView}>
+            <span className={ImageSliderCSS.fullViewSpan}>
+              <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
+              Full View
+            </span>
+          </div>
         )
-      </span>
-    </button>
-  </div>
-);
+          : <div /> }
 
+        <div className={ImageSliderCSS.slider_button_container}>
+          <button // Button that includes an arrow icon img to go to the next image
+            type="button"
+            className={ImageSliderCSS.slider_button}
+            onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
+          >
+            <img
+              className={ImageSliderCSS.directional_arrow_right}
+              src={arrowIcon}
+              alt="Next"
+            />
+          </button>
+        </div>
+
+        <div className={ImageSliderCSS.view_all_button_div}>
+          <button // Button that allows a user to view the Gallery Modal for all of the images
+            className={ImageSliderCSS.view_all_button}
+            type="button"
+            onClick={this.handleClick}
+            onMouseEnter={this.handleHoverOut}
+            onMouseLeave={this.handleHoverIn}
+          >
+            <img
+              className={ImageSliderCSS.view_all_img}
+              src={cameraIcon}
+              alt="View Gallery"
+            />
+            <span
+              className={ImageSliderCSS.img_count}
+            >
+              View All Photos (
+              {imageCount}
+              )
+            </span>
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
+ImageSlider.defaultProps = {
+  handleImageSliderClick: () => {},
+  backgroundImage: {},
+  imageCount: 0,
+};
+
+ImageSlider.propTypes = {
+  handleImageSliderClick: PropTypes.func,
+  backgroundImage: PropTypes.shape({}),
+  imageCount: PropTypes.number,
+};
 export default ImageSlider;
