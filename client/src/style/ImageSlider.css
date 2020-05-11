@@ -129,6 +129,11 @@
   font-size: 1.2em;
 }
 
+.diagonalArrows {
+  height: 0.9em;
+  margin-right: .3em;
+}
+
 .fade-exit {
   animation: fadeout .5s;
 }

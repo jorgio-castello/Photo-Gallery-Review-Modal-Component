@@ -24,7 +24,7 @@ class App extends React.Component {
       activePhotoIdx: 0,
       photos: [{ link: '' }],
       showGalleryModal: false,
-      showReviewModal: false,
+      showReviewModal: true,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);

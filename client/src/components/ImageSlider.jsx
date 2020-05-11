@@ -7,7 +7,7 @@ import ImageSliderCSS from '../style/ImageSlider.css';
 // Import AWS S3 Links
 import awsS3Links from '../../../AmazonS3Links';
 // Destrcture awsS3Links
-const { arrowIcon, cameraIcon } = awsS3Links;
+const { arrowIcon, cameraIcon, diagonalArrows } = awsS3Links;
 
 class ImageSlider extends React.Component {
   constructor(props) {
@@ -79,7 +79,15 @@ class ImageSlider extends React.Component {
           </button>
         </div>
 
-        { isImageHovered ? <div id="fullView" className={ImageSliderCSS.fullView}><span>Full View</span></div> : <div /> }
+        { isImageHovered ? (
+          <div id="fullView" className={ImageSliderCSS.fullView}>
+            <span className={ImageSliderCSS.fullViewSpan}>
+              <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
+              Full View
+            </span>
+          </div>
+        )
+          : <div /> }
 
         <div className={ImageSliderCSS.slider_button_container}>
           <button // Button that includes an arrow icon img to go to the next image

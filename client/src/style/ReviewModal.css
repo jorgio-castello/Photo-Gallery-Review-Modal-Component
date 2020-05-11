@@ -37,6 +37,10 @@
   max-height: 10em;
 }
 
+.slider_button:hover {
+  cursor: pointer;
+}
+
 .directional_arrow_right {
   height: 3em;
   color: white;
@@ -64,10 +68,23 @@
   background: white;
   color: black;
   height: 30%;
-  font-size: 1.1em;
-  width: 35%;
+  line-height: 1em;
+  font-size: 1em;
+  width: 25%;
   margin-left: 0.5em;
   margin-top: 0.5em;
+  font-family: 'Roboto';
+  align-content: center;
+}
+
+.galleryIcon {
+  height: 1em;
+  margin-right: .3em;
+}
+
+.galleryIconAndText {
+  display: flex;
+  justify-content: center;
 }
 
 .showGalleryButton:hover {
@@ -81,6 +98,7 @@
   text-align: right;
   font-size: .8em;
   padding-right: 1em;
+  font-family: 'Roboto';
 }
 
 .reviewComponent {

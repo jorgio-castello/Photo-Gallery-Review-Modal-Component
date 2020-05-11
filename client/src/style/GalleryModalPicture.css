@@ -9,6 +9,10 @@
   padding: .1em;
 }
 
+.container:hover {
+  cursor: pointer;
+}
+
 .photoStyling {
   max-width: 100%;
 }

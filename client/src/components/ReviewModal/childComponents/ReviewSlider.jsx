@@ -34,7 +34,7 @@ const ReviewSlider = (props) => {
           <div className={ReviewSliderCSS.userInfoContainer}>
             <div className={ReviewSliderCSS.username}>{user}</div>
             <div className={ReviewSliderCSS.datePosted}>
-              Wrote a Review
+              Wrote a review
               {date}
             </div>
             <div className={ReviewSliderCSS.userContributions}>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReviewModalCSS from '../../../style/ReviewModal.css';
 import awsS3Links from '../../../../../AmazonS3Links';
 
-const { arrowIcon } = awsS3Links;
+const { arrowIcon, galleryIcon } = awsS3Links;
 
 const ContainerLeft = ({ showGalleryModal, handleImageSliderClick }) => (
   <div className={ReviewModalCSS.leftContainer}>
@@ -14,7 +14,10 @@ const ContainerLeft = ({ showGalleryModal, handleImageSliderClick }) => (
         className={ReviewModalCSS.showGalleryButton}
         onClick={showGalleryModal}
       >
-        Gallery
+        <span className={ReviewModalCSS.galleryIconAndText}>
+          <img className={ReviewModalCSS.galleryIcon} alt="Gallery Icon" src={galleryIcon} />
+          Gallery
+        </span>
       </button>
     </div>
     <div className={ReviewModalCSS.prev_button}>

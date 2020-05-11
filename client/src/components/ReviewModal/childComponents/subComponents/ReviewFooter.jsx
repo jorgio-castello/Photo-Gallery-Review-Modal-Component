@@ -14,10 +14,10 @@ const ReviewFooter = ({ helpfulScore }) => (
         {helpfulScore}
         )
       </button>
-      <div className={ReviewCSS.footerContentRight}>
+      {/* <div className={ReviewCSS.footerContentRight}>
         <button type="button" className={ReviewCSS.saveTrip}>SaveTrip</button>
         <button type="button" className={ReviewCSS.reportPhoto}>ReportPhoto</button>
-      </div>
+      </div> */}
       <div className={ReviewCSS.footerActions} />
     </div>
   </div>
