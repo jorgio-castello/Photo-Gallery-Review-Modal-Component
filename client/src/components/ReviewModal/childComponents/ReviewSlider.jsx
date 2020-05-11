@@ -14,11 +14,11 @@ const { crossIcon } = awsS3Links;
 const { setUsernameAndLetter, setDate } = helpers;
 
 const ReviewSlider = (props) => {
-  const { photos, activePhotoIdx } = props;
+  const { photos, activePhotoIdx, hideReviewSlider } = props;
   const activePhoto = photos[activePhotoIdx];
 
   const {
-    date_created, user_contributions, review_stars, review_title, review_description
+    date_created, user_contributions, review_stars, review_title, review_description,
   } = activePhoto;
 
   const [user, firstLetter] = setUsernameAndLetter({ photos, activePhotoIdx });
@@ -46,7 +46,11 @@ const ReviewSlider = (props) => {
           </div>
         </div>
         <div className={ReviewSliderCSS.headerContainerRight}>
-          <button className={ReviewSliderCSS.closeReviewSliderButton} type="button">
+          <button
+            className={ReviewSliderCSS.closeReviewSliderButton}
+            type="button"
+            onClick={hideReviewSlider}
+          >
             <img className={ReviewSliderCSS.closeReviewSliderImage} src={crossIcon} alt="Close Review" />
           </button>
         </div>
