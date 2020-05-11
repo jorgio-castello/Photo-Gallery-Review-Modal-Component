@@ -38,6 +38,7 @@ const setDate = (date) => {
     const year = dateObject.getFullYear();
     return ` ${months[month + 1]} ${year}`;
   }
+  return '';
 };
 
 export default { setUsernameAndLetter, checkForReview, setDate };
