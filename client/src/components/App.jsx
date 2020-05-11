@@ -24,7 +24,7 @@ class App extends React.Component {
       activePhotoIdx: 0,
       photos: [{ link: '' }],
       showGalleryModal: false,
-      showReviewModal: true,
+      showReviewModal: false,
     };
     this.nextImageHandler = nextImageHandler.bind(this);
     this.prevImageHandler = prevImageHandler.bind(this);
@@ -69,7 +69,7 @@ class App extends React.Component {
         <ImageSlider
           backgroundImage={imageStyle}
           alt={alt}
-          count={photos.length}
+          imageCount={photos.length}
           handleImageSliderClick={this.handleImageSliderClick}
         />
         {showGalleryModal || showReviewModal ? ( // Dynamically renders a modal component
