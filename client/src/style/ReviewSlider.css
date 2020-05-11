@@ -1,0 +1,105 @@
+.container {
+  width: 100%;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.headerContainer {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.headerContainerLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.headerContainerRight {
+  width: 3.5%;
+  padding-right: 1vw;
+  justify-content: center;
+}
+
+.contentContainer {
+  height: 75%;
+  background: rgba(211, 211, 211, 0.137);
+  overflow: auto;
+}
+
+.emblem {
+  display: inline-flex;
+  border: 1px solid black;
+  line-height: 2.5em;
+  max-height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.emblemLetter {
+  margin: 0 auto;
+}
+
+.userInfoContainer {
+  display: inline-flex;
+  width: 100%;
+  margin-left: .5em;
+  margin-bottom: .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8em;
+}
+
+.username {
+  margin-left: .2em;
+  display: inline-flex;
+}
+
+.datePosted {
+  margin-left: .2em;
+  display: inline-flex;
+}
+
+.userContributions {
+  margin-left: .2em;
+  display: inline-flex;
+}
+
+.closeReviewSliderButton {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.closeReviewSliderImage {
+  max-height: 2em;
+}
+
+.stars {
+  margin-left: 1em;
+  padding-top: 1em;
+}
+
+.reviewTitle {
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+  font-size: 1.2em;
+}
+
+.reviewDescription {
+  color: gray;
+}
