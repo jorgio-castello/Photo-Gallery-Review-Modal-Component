@@ -30,4 +30,14 @@ const checkForReview = (props) => {
   return [review_title, review_description, review_helpful_score, review_stars];
 };
 
-export default { setUsernameAndLetter, checkForReview };
+const setDate = (date) => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  if (date) {
+    const dateObject = new Date(date);
+    const month = dateObject.getMonth();
+    const year = dateObject.getFullYear();
+    return ` ${months[month + 1]} ${year}`;
+  }
+};
+
+export default { setUsernameAndLetter, checkForReview, setDate };
