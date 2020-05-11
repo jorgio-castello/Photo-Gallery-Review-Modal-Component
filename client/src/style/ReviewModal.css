@@ -7,7 +7,10 @@
 }
 
 .image {
-  width: 50%;
+  max-width: 70%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .leftContainer, .rightContainer {
@@ -17,9 +20,16 @@
   height: 60%;
 }
 
+.leftContainer {
+  position: absolute;
+  left: 0;
+}
+
 .rightContainer {
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  right: 0;
   /* align-content: center; */
 }
 
@@ -70,7 +80,7 @@
   height: 30%;
   line-height: 1em;
   font-size: 1em;
-  width: 25%;
+  /* width: 25%; */
   margin-left: 0.5em;
   margin-top: 0.5em;
   font-family: 'Roboto';
