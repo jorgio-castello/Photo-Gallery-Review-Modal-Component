@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ModalCSS from '../style/Modal.css';
 import ModalHeader from './ModalHeader';
-import GalleryModal from './GalleryModal';
+import GalleryModal from './GalleryModal/';
 import ReviewModal from './ReviewModal';
 
 const Modal = (
