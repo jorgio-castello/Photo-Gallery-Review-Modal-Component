@@ -18,7 +18,6 @@
 }
 
 .slider_button_container {
-  color: blue;
   line-height: 35vw;
   float: right;
 }
@@ -35,6 +34,7 @@
 
 .slider_button:hover {
   background: rgba(0, 0, 0, 0.50);
+  cursor: pointer;
 }
 
 .directional_arrow_right {
@@ -82,5 +82,24 @@
 
 .view_all_button:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.fullView {
+  width: 49.5vw;
+  height: 34.5vw;
+  line-height: 34.5vw;
+  text-align: center;
+  position: absolute;
+}
+
+.fullView span {
+  color: white;
+  background: rgba(0, 0, 0, 0.50);
+  padding: 1.5em;
+  border-radius: 5px;
+}
+
+.fullView:hover {
   cursor: pointer;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,7 +12,14 @@ const { arrowIcon, cameraIcon } = awsS3Links;
 class ImageSlider extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isImageHovered: false,
+    };
+
     this.handleClick = this.handleClick.bind(this);
+    this.handleHoverIn = this.handleHoverIn.bind(this);
+    this.handleHoverOut = this.handleHoverOut.bind(this);
 
     // Destructure props event handlers
     const { handleImageSliderClick } = this.props;
@@ -22,9 +30,22 @@ class ImageSlider extends React.Component {
     this.handleImageSliderClick(e);
   }
 
+  handleHoverIn() {
+    this.setState({
+      isImageHovered: true,
+    });
+  }
+
+  handleHoverOut() {
+    this.setState({
+      isImageHovered: false,
+    });
+  }
+
   render() {
     // Destructure props static data
     const { backgroundImage, imageCount } = this.props;
+    const { isImageHovered } = this.state;
 
     return (
       // * Accessibility features to implemenet: ability to focus Image Click with tab keypress *
@@ -36,6 +57,8 @@ class ImageSlider extends React.Component {
         aria-label="Click to View Image Modal"
         onClick={this.handleClick}
         onKeyPress={() => {}}
+        onMouseEnter={this.handleHoverIn}
+        onMouseLeave={this.handleHoverOut}
       >
         <div className={ImageSliderCSS.prev_button}>
           <button // Button that includes an arrow icon img to go to the previous image
@@ -50,6 +73,8 @@ class ImageSlider extends React.Component {
             />
           </button>
         </div>
+
+        { isImageHovered ? <div className={ImageSliderCSS.fullView}><span>Full View</span></div> : <div /> }
 
         <div className={ImageSliderCSS.slider_button_container}>
           <button // Button that includes an arrow icon img to go to the next image
