@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import ContainerLeft from './Containers/ContainerLeft';
 import ContainerRight from './Containers/ContainerRight';
 import Review from './childComponents/Review';
+import ReviewSlider from './childComponents/ReviewSlider';
 
 // CSS styling
 import ReviewModalCSS from '../../style/ReviewModal.css';
@@ -24,32 +25,35 @@ const ReviewModal = (
   const activePhoto = photos[activePhotoIdx];
 
   return (
-    <div className={ReviewModalCSS.container}>
+    <>
+      <div className={ReviewModalCSS.container}>
 
-      <ContainerLeft // Contains buttons on left-side of the ReviewModal component
-        showGalleryModal={showGalleryModal}
-        handleImageSliderClick={handleImageSliderClick}
-      />
+        <ContainerLeft // Contains buttons on left-side of the ReviewModal component
+          showGalleryModal={showGalleryModal}
+          handleImageSliderClick={handleImageSliderClick}
+        />
 
-      {/* Primary content of the page: current image */}
-      <img
-        className={ReviewModalCSS.image}
-        alt={activePhoto.alt}
-        src={`${awsBaseUrl}/${activePhoto.link}`}
-      />
+        {/* Primary content of the page: current image */}
+        <img
+          className={ReviewModalCSS.image}
+          alt={activePhoto.alt}
+          src={`${awsBaseUrl}/${activePhoto.link}`}
+        />
 
-      <ContainerRight // Contains information / buttons on right-side of the ReviewModal component
-        activePhotoIdx={activePhotoIdx}
-        photos={photos}
-        handleImageSliderClick={handleImageSliderClick}
-      />
+        <ContainerRight // Contains information / buttons on right-side of the ReviewModal component
+          activePhotoIdx={activePhotoIdx}
+          photos={photos}
+          handleImageSliderClick={handleImageSliderClick}
+        />
 
-      {/* Displays relevant information about the review associated with this phot */}
-      <div className={ReviewModalCSS.reviewComponent}>
-        <Review photos={photos} activePhotoIdx={activePhotoIdx} />
+        {/* Displays relevant information about the review associated with this phot */}
+        <div className={ReviewModalCSS.reviewComponent}>
+          <Review photos={photos} activePhotoIdx={activePhotoIdx} />
+        </div>
+
+        <ReviewSlider photos={photos} activePhotoIdx={activePhotoIdx} />
       </div>
-
-    </div>
+    </>
   );
 };
 
