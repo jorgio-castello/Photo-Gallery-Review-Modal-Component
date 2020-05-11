@@ -85,6 +85,10 @@
   height: 100%;
 }
 
+.closeReviewSliderButton:hover {
+  cursor: pointer;
+}
+
 .closeReviewSliderImage {
   max-height: 2em;
 }

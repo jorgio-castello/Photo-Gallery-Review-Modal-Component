@@ -131,6 +131,7 @@
   font-size: .8em;
   margin-top: 1em;
   padding: 0 !important;
+  cursor: pointer;
 }
 
 .reviewContainer {
