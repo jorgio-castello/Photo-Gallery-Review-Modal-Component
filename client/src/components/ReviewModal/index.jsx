@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Child Components
 import ContainerLeft from './childComponents/ContainerLeft';
 import ContainerRight from './childComponents/ContainerRight';
-import Review from '../Review';
+import Review from './childComponents/Review';
 
 // CSS styling
 import ReviewModalCSS from '../../style/ReviewModal.css';

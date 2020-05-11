@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewCSS from '../style/Review.css';
+import ReviewCSS from '../../../style/Review.css';
 
 class Review extends React.Component {
   constructor(props) {

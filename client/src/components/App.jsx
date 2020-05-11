@@ -82,7 +82,7 @@ class App extends React.Component {
             showGalleryModal={this.showGalleryModalHandler}
             showReviewModal={this.showReviewModalHandler}
             handleImageSliderClick={this.handleImageSliderClick}
-            updateGalleryDisplay={this.closeModal}
+            closeModal={this.closeModal}
           />
         ) : <div />}
       </>

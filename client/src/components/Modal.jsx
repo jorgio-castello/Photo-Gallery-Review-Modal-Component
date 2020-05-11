@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ModalCSS from '../style/Modal.css';
-import ModalHeader from './ModalHeader';
+import ModalHeader from './Partials/ModalHeader';
 import GalleryModal from './GalleryModal/index';
 import ReviewModal from './ReviewModal/index';
 
@@ -10,7 +10,7 @@ const Modal = (
   {
     name, location, activePhotoIdx, photos, // Props related to activity / photo data
     shouldShowGalleryModal, // Boolean to show either gallery or review modal
-    updateGalleryDisplay, handleImageSliderClick, showGalleryModal, showReviewModal, // Event funcs
+    closeModal, handleImageSliderClick, showGalleryModal, showReviewModal, // Event funcs
   },
 ) => (
   <>
@@ -19,7 +19,7 @@ const Modal = (
         <ModalHeader
           name={name}
           location={location}
-          updateGalleryDisplay={updateGalleryDisplay}
+          closeModal={closeModal}
         />
 
         {shouldShowGalleryModal // Ternary test to show appropriate modal
@@ -47,7 +47,7 @@ Modal.defaultProps = {
   location: '',
   activePhotoIdx: 0,
   photos: [],
-  updateGalleryDisplay: () => {},
+  closeModal: () => {},
   shouldShowGalleryModal: false,
   handleImageSliderClick: () => {},
   showGalleryModal: () => {},
@@ -59,7 +59,7 @@ Modal.propTypes = {
   location: PropTypes.string,
   activePhotoIdx: PropTypes.number,
   photos: PropTypes.shape([]),
-  updateGalleryDisplay: PropTypes.func,
+  closeModal: PropTypes.func,
   shouldShowGalleryModal: PropTypes.bool,
   handleImageSliderClick: PropTypes.func,
   showGalleryModal: PropTypes.func,
