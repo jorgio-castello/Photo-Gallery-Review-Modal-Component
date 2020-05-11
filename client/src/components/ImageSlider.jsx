@@ -96,7 +96,7 @@ ImageSlider.defaultProps = {
 
 ImageSlider.propTypes = {
   handleImageSliderClick: PropTypes.func,
-  backgroundImage: PropTypes.objectOf(PropTypes.any),
+  backgroundImage: PropTypes.shape({}),
   imageCount: PropTypes.number,
 };
 export default ImageSlider;
