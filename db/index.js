@@ -9,7 +9,7 @@ db.connect((err) => {
   if (err) {
     throw new Error(err);
   } else { // eslint-disable-next-line no-console
-    console.log(`Successfully connected to ${mysqlConfig.database} database...`);
+    // console.log(`Successfully connected to ${mysqlConfig.database} database...`);
   }
 });
 
