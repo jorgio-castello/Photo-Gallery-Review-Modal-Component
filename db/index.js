@@ -7,7 +7,7 @@ mysqlConfig = mysqlConfig || { host: 'localhost', user: 'root', database: 'tripA
 const db = mysql.createConnection(mysqlConfig);
 db.connect((err) => {
   if (err) {
-    throw new Error(err);
+    console.log(err);
   } else { // eslint-disable-next-line no-console
     // console.log(`Successfully connected to ${mysqlConfig.database} database...`);
   }
