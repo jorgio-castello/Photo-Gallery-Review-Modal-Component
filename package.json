@@ -12,7 +12,7 @@
     "start-react": "live-server --open=client/dist",
     "test": "jest",
     "lint": "eslint .",
-    "seed": "mysql -u root -p < schema.sql && node db/initializer/seedDB.js",
+    "seed": "node db/initializer/seedDB.js",
     "server-dev": "nodemon server/index.js",
     "start": "node server/index.js"
   },
