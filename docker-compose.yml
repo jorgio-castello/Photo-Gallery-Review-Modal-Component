@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - '9999:9999'
+    expose:
+      - '9999'
+  db:
+    container_name: gallerydb
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
