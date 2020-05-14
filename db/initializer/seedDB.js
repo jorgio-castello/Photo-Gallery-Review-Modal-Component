@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const _ = require('underscore');
+const db = require('../index');
 
 // This class generates a random activity instance
 const { TripAdvisorActivity } = require('./data/TripAdvisorActivity.js');
@@ -132,6 +133,13 @@ const addImages = (photos, activityId, infoId, maxImagesForUser, currentImgIdx, 
 
 init(imageUrlsFilePath, (imagePaths) => {
   populateDatabase(imagePaths, () => { // eslint-disable-next-line no-console
-    console.log('Database has completed seeding...');
+    console.log('Database is wrapping up seeding...');
+    db.end((err) => {
+      if (err) {
+        throw new Error(err);
+      } else {
+        console.log('Database and Web Service will now reboot to serve requests...')
+      }
+    });
   });
 });
