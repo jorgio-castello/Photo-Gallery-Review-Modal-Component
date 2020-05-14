@@ -6,7 +6,7 @@ mysqlConfig = {
   host: 'db',
   user: 'root',
   password: 'password',
-  database: 'tripAdvisorGallery'
+  database: 'tripAdvisorGallery',
 };
 
 const db = mysql.createConnection(mysqlConfig);
