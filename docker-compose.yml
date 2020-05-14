@@ -4,7 +4,9 @@ services:
   web:
     build: .
     depends_on:
-      - db
+      - 'db'
+    links:
+      - 'db'
     ports:
       - '9999:9999'
     expose:
@@ -12,6 +14,8 @@ services:
   db:
     container_name: gallerydb
     image: mysql:5.7
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
