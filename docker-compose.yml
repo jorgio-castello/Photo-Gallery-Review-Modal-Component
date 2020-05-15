@@ -2,6 +2,8 @@ version: '3'
 
 services:
   web:
+    container_name: galleryweb
+    image: tripadvisorgallery
     build: .
     depends_on:
       - 'db'
@@ -13,11 +15,13 @@ services:
       - '9999'
   db:
     container_name: gallerydb
-    image: mysql:5.7
+    image: tripadvisorsql
     volumes:
       - ./mysql-dump:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD: 'password'
+        MYSQL_ROOT_PASSWORD: 'password'
+    restart: always
+    build: ./db
     ports:
       - '3306:3306'
     expose:
