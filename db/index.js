@@ -3,10 +3,10 @@ let { mysqlConfig } = require('../config.js');
 
 // Re-assign mysqlConfig to default params with no password if config file is not present
 mysqlConfig = {
-  host: 'db',
-  user: 'root',
-  password: 'password',
-  database: 'tripAdvisorGallery',
+  host: '172.17.0.2',
+  user: process.env.DATABASE_USER || 'root',
+  password: process.env.DATABASE_PASS || 'password',
+  database: process.env.DATABASE_NAME || 'tripAdvisorGallery',
 };
 
 const db = mysql.createConnection(mysqlConfig);
