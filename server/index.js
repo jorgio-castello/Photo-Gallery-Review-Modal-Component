@@ -1,5 +1,6 @@
 const express = require('express');
 const compression = require('compression');
+const cache = require('express-cache-controller');
 const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
@@ -9,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(morgan('dev'));
+app.use(cache({maxAge: 360000}));
 app.use(compression());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
