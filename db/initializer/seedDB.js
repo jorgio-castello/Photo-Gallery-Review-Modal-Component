@@ -66,7 +66,7 @@ const createActivity = (photos, callback) => {
 
   addActivity(newActivity, (activityId) => {
     // Generates a random number between 10 and 15 for the number of photos per activity
-    const randomNumberOfImagesForActivity = Math.floor(Math.random() * (15 - 10 + 1) + 10);
+    const randomNumberOfImagesForActivity = Math.floor(Math.random() * (14 - 9 + 1) + 9);
     // eslint-disable-next-line no-use-before-define
     addUserForActivity(photos, activityId, randomNumberOfImagesForActivity, callback);
   });
