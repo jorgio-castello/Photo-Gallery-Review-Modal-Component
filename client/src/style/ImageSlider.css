@@ -1,7 +1,6 @@
 .container {
   width: 37.2857142857vw;
   height: 26.1vw;
-  min-height: 420px;
   box-shadow: inset 0px 0px 120px 60px rgba(0,0,0,0.4);
   overflow: hidden;
   background-position: center;
