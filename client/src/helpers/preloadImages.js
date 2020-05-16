@@ -1,3 +1,8 @@
+// Import AWS S3 Links
+import awsS3Links from '../../../AmazonS3Links';
+// Destrcture awsS3Links
+const { awsBaseUrl } = awsS3Links;
+
 const preloadImages = (photos) => {
   const links = photos.map((photo) => {
     const link = document.createElement('link');
