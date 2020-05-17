@@ -99,19 +99,8 @@ class ReviewModal extends React.Component {
   }
 };
 
-ReviewModal.defaultProps = {
-  photos: [],
-  activePhotoIdx: 0,
-  handleImageSliderClick: () => {},
-  showGalleryModal: () => {},
-};
+ReviewModal.defaultProps = {};
 
-ReviewModal.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  photos: PropTypes.array,
-  activePhotoIdx: PropTypes.number,
-  handleImageSliderClick: PropTypes.func,
-  showGalleryModal: PropTypes.func,
-};
+ReviewModal.propTypes = {};
 
 export default ReviewModal;

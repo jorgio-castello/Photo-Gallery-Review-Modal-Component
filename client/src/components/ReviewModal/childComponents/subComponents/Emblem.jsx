@@ -17,14 +17,8 @@ const Emblem = ({ firstLetter, user }) => (
   </>
 );
 
-Emblem.defaultProps = {
-  firstLetter: '',
-  user: '',
-};
+Emblem.defaultProps = {};
 
-Emblem.propTypes = {
-  firstLetter: PropTypes.string,
-  user: PropTypes.string,
-};
+Emblem.propTypes = {};
 
 export default Emblem;

@@ -21,22 +21,8 @@ const GalleryModalPicture = ({ photo, showReviewModal, id }) => (
   </div>
 );
 
-GalleryModalPicture.defaultProps = {
-  photo: {
-    alt: '',
-    link: '',
-  },
-  showReviewModal: () => {},
-  id: 0,
-};
+GalleryModalPicture.defaultProps = {};
 
-GalleryModalPicture.propTypes = {
-  photo: {
-    alt: PropTypes.string,
-    link: PropTypes.string,
-  },
-  showReviewModal: PropTypes.func,
-  id: PropTypes.number,
-};
+GalleryModalPicture.propTypes = {};
 
 export default GalleryModalPicture;

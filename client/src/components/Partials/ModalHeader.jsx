@@ -32,16 +32,8 @@ const ModalHeader = ({ name, location, closeModal }) => (
   </div>
 );
 
-ModalHeader.defaultProps = {
-  name: '',
-  location: '',
-  closeModal: () => {},
-};
+ModalHeader.defaultProps = {};
 
-ModalHeader.propTypes = {
-  name: PropTypes.string,
-  location: PropTypes.string,
-  closeModal: PropTypes.func,
-};
+ModalHeader.propTypes = {};
 
 export default ModalHeader;

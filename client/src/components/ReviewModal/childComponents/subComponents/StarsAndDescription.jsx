@@ -15,16 +15,8 @@ const StarsAndDescription = ({ stars, description, handleReadReviewClick }) => (
   </>
 );
 
-StarsAndDescription.defaultProps = {
-  stars: 0,
-  description: '',
-  handleReadReviewClick: () => {},
-};
+StarsAndDescription.defaultProps = {};
 
-StarsAndDescription.propTypes = {
-  stars: PropTypes.number,
-  description: PropTypes.string,
-  handleReadReviewClick: PropTypes.func,
-};
+StarsAndDescription.propTypes = {};
 
 export default StarsAndDescription;

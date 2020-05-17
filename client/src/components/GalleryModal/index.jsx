@@ -18,14 +18,8 @@ const GalleryModal = ({ photos, showReviewModal }) => (
   </div>
 );
 
-GalleryModal.defaultProps = {
-  photos: [],
-  showReviewModal: () => {},
-};
+GalleryModal.defaultProps = {};
 
-GalleryModal.propTypes = {
-  photos: PropTypes.shape([]),
-  showReviewModal: PropTypes.func,
-};
+GalleryModal.propTypes = {};
 
 export default GalleryModal;
