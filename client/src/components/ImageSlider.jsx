@@ -132,7 +132,17 @@ class ImageSlider extends React.Component {
   }
 }
 
-ImageSlider.defaultProps = {};
+ImageSlider.defaultProps = {
+  handleImageSliderClick: () => {},
+  backgroundImage: {},
+  imageCount: 0,
+};
+
+ImageSlider.propTypes = {
+  handleImageSliderClick: PropTypes.func,
+  backgroundImage: PropTypes.shape({}),
+  imageCount: PropTypes.number,
+};
 
 ImageSlider.propTypes = {};
 export default ImageSlider;
