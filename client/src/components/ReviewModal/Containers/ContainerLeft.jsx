@@ -36,8 +36,14 @@ const ContainerLeft = ({ showGalleryModal, handleImageSliderClick }) => (
   </div>
 );
 
-ContainerLeft.defaultProps = {};
+ContainerLeft.defaultProps = {
+  showGalleryModal: () => {},
+  handleImageSliderClick: () => {},
+};
 
-ContainerLeft.propTypes = {};
+ContainerLeft.propTypes = {
+  showGalleryModal: PropTypes.func,
+  handleImageSliderClick: PropTypes.func,
+};
 
 export default ContainerLeft;
