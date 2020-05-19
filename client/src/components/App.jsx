@@ -84,7 +84,7 @@ class App extends React.Component {
           <Modal
             name={activity.name}
             location={activity.location}
-            activePhotoIdx={activePhotoIdx}
+            activePhotoIdx={Number(activePhotoIdx)}
             photos={photos}
             shouldShowGalleryModal={showGalleryModal}
             showGalleryModal={this.showGalleryModalHandler}
