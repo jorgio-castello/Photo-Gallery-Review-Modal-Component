@@ -24,8 +24,12 @@ const Stars = ({ stars }) => {
   );
 };
 
-Stars.defaultProps = {};
+Stars.defaultProps = {
+  stars: 0,
+};
 
-Stars.propTypes = {};
+Stars.propTypes = {
+  stars: PropTypes.number,
+};
 
 export default Stars;

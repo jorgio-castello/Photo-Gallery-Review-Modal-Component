@@ -18,8 +18,12 @@ const ReviewFooter = ({ helpfulScore }) => (
   </div>
 );
 
-ReviewFooter.defaultProps = {};
+ReviewFooter.defaultProps = {
+  helpfulScore: 0,
+};
 
-ReviewFooter.propTypes = {};
+ReviewFooter.propTypes = {
+  helpfulScore: PropTypes.number,
+};
 
 export default ReviewFooter;
