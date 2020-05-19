@@ -33,8 +33,17 @@ const ContainerRight = ({ activePhotoIdx, photos, handleImageSliderClick }) => (
   </div>
 );
 
-ContainerRight.defaultProps = {};
+ContainerRight.defaultProps = {
+  photos: [],
+  activePhotoIdx: 0,
+  handleImageSliderClick: () => {},
+};
 
-ContainerRight.propTypes = {};
+ContainerRight.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  photos: PropTypes.array,
+  activePhotoIdx: PropTypes.number,
+  handleImageSliderClick: PropTypes.func,
+};
 
 export default ContainerRight;
