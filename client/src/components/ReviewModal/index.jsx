@@ -27,10 +27,16 @@ class ReviewModal extends React.Component {
     document.querySelector('body').addEventListener('click', () => this.setState({showReviewSlider: false }));
   }
 
-  componentWillRender() {
+  componentDidlMount() {
     this.setState({
       showReviewSlider: false,
     });
+  }
+
+  componentWillUnmount() {
+    this.setState = (state, callback) => {
+      return;
+    };
   }
 
   displayReviewSlider() {
@@ -71,7 +77,7 @@ class ReviewModal extends React.Component {
 
           {/* Contains information / buttons on right-side of the ReviewModal component */}
           <ContainerRight
-            activePhotoIdx={activePhotoIdx}
+            activePhotoIdx={Number(activePhotoIdx)}
             photos={photos}
             handleImageSliderClick={handleImageSliderClick}
           />
