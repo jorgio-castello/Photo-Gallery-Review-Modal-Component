@@ -18,8 +18,15 @@ const GalleryModal = ({ photos, showReviewModal }) => (
   </div>
 );
 
-GalleryModal.defaultProps = {};
+GalleryModal.defaultProps = {
+  // photos: [],
+  // showReviewModal: () => {},
+};
 
-GalleryModal.propTypes = {};
+GalleryModal.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  // photos: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  // showReviewModal: PropTypes.func,
+};
 
 export default GalleryModal;
