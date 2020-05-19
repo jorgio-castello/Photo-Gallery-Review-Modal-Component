@@ -42,8 +42,28 @@ const Modal = (
   </>
 );
 
-Modal.defaultProps = {};
-
-Modal.propTypes = {};
+Modal.defaultProps = {
+  name: '',
+  location: '',
+  activePhotoIdx: 0,
+  photos: [],
+  closeModal: () => {},
+  shouldShowGalleryModal: false,
+  handleImageSliderClick: () => {},
+  showGalleryModal: () => {},
+  showReviewModal: () => {},
+};
+Modal.propTypes = {
+  name: PropTypes.string,
+  location: PropTypes.string,
+  activePhotoIdx: PropTypes.number,
+  // eslint-disable-next-line react/forbid-prop-types
+  photos: PropTypes.array,
+  closeModal: PropTypes.func,
+  shouldShowGalleryModal: PropTypes.bool,
+  handleImageSliderClick: PropTypes.func,
+  showGalleryModal: PropTypes.func,
+  showReviewModal: PropTypes.func,
+};
 
 export default Modal;
