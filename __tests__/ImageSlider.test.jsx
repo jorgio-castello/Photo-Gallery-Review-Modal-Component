@@ -48,7 +48,7 @@ describe('Unit Tests', () => {
     expect(instance.state.showGalleryModal).toBe(true);
   });
 
-  test('should update isImageHovered state on hover', () => {
+  test('should update isImageHovered state on mouseenter', () => {
     const wrapper = shallow(<App />);
     const ImageSliderWrapper = wrapper.find(ImageSlider).shallow();
 
@@ -56,5 +56,17 @@ describe('Unit Tests', () => {
 
     ImageSliderWrapper.simulate('mouseenter');
     expect(instance.state.isImageHovered).toBe(true);
+  });
+
+  test('should update isImageHovered state on mouseleave', () => {
+    const wrapper = shallow(<App />);
+    const ImageSliderWrapper = wrapper.find(ImageSlider).shallow();
+
+    const instance = ImageSliderWrapper.instance();
+
+    ImageSliderWrapper.simulate('mouseenter');
+    expect(instance.state.isImageHovered).toBe(true);
+    ImageSliderWrapper.simulate('mouseleave');
+    expect(instance.state.isImageHovered).toBe(false);
   });
 });
