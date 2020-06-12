@@ -77,7 +77,7 @@ class ImageSlider extends React.Component {
         </div>
 
         { isImageHovered ? (
-          <div id="fullView" className={ImageSliderCSS.fullView}>
+          <div className={ImageSliderCSS.fullView}>
             <span className={ImageSliderCSS.fullViewSpan}>
               <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
               Full View

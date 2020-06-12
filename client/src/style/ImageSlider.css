@@ -10,6 +10,10 @@
   transition: opacity .5s ease-out;
 }
 
+.container:hover {
+  cursor: pointer;
+}
+
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
@@ -17,11 +21,6 @@
   100% {
     opacity: 1;
   }
-}
-
-.containerHover {
-  opacity: 0.9;
-  cursor: pointer;
 }
 
 .prev_button {
@@ -115,9 +114,8 @@
   line-height: 26.1vw;
   text-align: center;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
-
 
 .fullView span {
   color: white;
