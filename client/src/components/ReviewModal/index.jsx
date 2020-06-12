@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { CSSTransition } from 'react-transition-group';
+
 // Child Components
 import ContainerLeft from './Containers/ContainerLeft';
 import ContainerRight from './Containers/ContainerRight';
@@ -86,14 +88,27 @@ class ReviewModal extends React.Component {
             />
           </div>
 
-          { showReviewSlider ? (
+          {/* { showReviewSlider ? ( */}
+          <CSSTransition
+            in={showReviewSlider}
+            timeout={300}
+            classNames={{
+              enter: ReviewModalCSS['slider-enter'],
+              enterActive: ReviewModalCSS['slider-enter-active'],
+              exit: ReviewModalCSS['slider-exit'],
+              exitActive: ReviewModalCSS['slider-exit-active'],
+            }}
+            mountOnEnter
+            unmountOnExit
+          >
             <ReviewSlider
               photos={photos}
               activePhotoIdx={activePhotoIdx}
               hideReviewSlider={this.hideReviewSlider}
-          />
-          )
-            : <div />}
+            />
+          </CSSTransition>
+          {/* )
+            : <div />} */}
         </div>
       </>
     );
