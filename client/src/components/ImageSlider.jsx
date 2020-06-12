@@ -116,7 +116,7 @@ class ImageSlider extends React.Component {
             <img
               className={ImageSliderCSS.view_all_img}
               src={cameraIcon}
-              alt="View All"
+              alt="View Gallery"
             />
             <span
               className={ImageSliderCSS.img_count}
