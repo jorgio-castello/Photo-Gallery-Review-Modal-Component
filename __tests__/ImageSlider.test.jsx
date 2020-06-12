@@ -14,7 +14,7 @@ describe('Unit Tests', () => {
     expect(wrapper).toExist();
   });
 
-  xtest('should increment the current photo when the "Next" button is pressed', () => {
+  test('should increment the current photo when the "Next" button is pressed', () => {
     const AppWrapper = mount(<App />);
     const instance = AppWrapper.instance();
     instance.setState({
@@ -27,7 +27,7 @@ describe('Unit Tests', () => {
     expect(instance.state.activePhotoIdx).toBe(1);
   });
 
-  xtest('should decrement the current photo when the "Previous" button is pressed', () => {
+  test('should decrement the current photo when the "Previous" button is pressed', () => {
     const AppWrapper = mount(<App />);
     const instance = AppWrapper.instance();
 
@@ -38,7 +38,7 @@ describe('Unit Tests', () => {
     expect(instance.state.activePhotoIdx).toBe(0);
   });
 
-  xtest('should update showGalleryModalState when View All button is pressed', () => {
+  test('should update showGalleryModalState when View All button is pressed', () => {
     const AppWrapper = mount(<App />);
     const instance = AppWrapper.instance();
 
