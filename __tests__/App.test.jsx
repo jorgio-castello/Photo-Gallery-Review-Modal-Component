@@ -1,10 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ImageSlider from '../client/src/components/ImageSlider';
+import Modal from '../client/src/components/Modal';
+import { shallow, mount } from 'enzyme';
 
 import App from '../client/src/components/App';
 import ExampleActivityData from '../ExampleActivityData';
 
-describe('Unit Tests', () => {
+describe('App Unit Tests', () => {
   beforeEach(() => {
     global.fetch = jest.fn(() => Promise.resolve(ExampleActivityData));
   });
@@ -30,5 +32,30 @@ describe('Unit Tests', () => {
     const preload = document.querySelectorAll('link');
     const preloadLengthIsGreaterThanOrEqualToZero = preload.length >= 0;
     expect(preloadLengthIsGreaterThanOrEqualToZero).toBe(true);
+  });
+
+  test('should render an ImageSlider component', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(ImageSlider)).toHaveLength(1);
+  });
+
+  test('should render the Modal component when showGalleryModal state is true', () => {
+    const wrapper = shallow(<App />);
+    const instance = wrapper.instance();
+
+    expect(wrapper.find(Modal)).toHaveLength(0);
+
+    instance.setState({ showGalleryModal: true });
+    expect(wrapper.find(Modal)).toHaveLength(1);
+  });
+
+  test('should render the Modal component when showReviewModal state is true', () => {
+    const wrapper = shallow(<App />);
+    const instance = wrapper.instance();
+
+    expect(wrapper.find(Modal)).toHaveLength(0);
+
+    instance.setState({ showReviewModal: true });
+    expect(wrapper.find(Modal)).toHaveLength(1);
   });
 });
