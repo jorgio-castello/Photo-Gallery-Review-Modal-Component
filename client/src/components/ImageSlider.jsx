@@ -79,7 +79,7 @@ class ImageSlider extends React.Component {
 
         <CSSTransition
           in={isImageHovered}
-          timeout={500}
+          timeout={750}
           classNames={{
             enter: ImageSliderCSS['fade-enter'],
             enterActive: ImageSliderCSS['fade-enter-active'],
@@ -89,14 +89,12 @@ class ImageSlider extends React.Component {
           mountOnEnter
           unmountOnExit
         >
-          {/* { isImageHovered ? ( */}
-            <div className={ImageSliderCSS.fullView}>
-              <span className={ImageSliderCSS.fullViewSpan}>
-                <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
-                Full View
-              </span>
-            </div>
-          {/* ) : <div /> } */}
+          <div className={ImageSliderCSS.fullView}>
+            <span className={ImageSliderCSS.fullViewSpan}>
+              <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
+              Full View
+            </span>
+          </div>
         </CSSTransition>
 
         <div className={ImageSliderCSS.slider_button_container}>
