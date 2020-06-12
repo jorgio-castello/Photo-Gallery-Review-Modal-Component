@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
 
 import ImageSliderCSS from '../style/ImageSlider.css';
 
@@ -76,15 +77,27 @@ class ImageSlider extends React.Component {
           </button>
         </div>
 
-        { isImageHovered ? (
-          <div className={ImageSliderCSS.fullView}>
-            <span className={ImageSliderCSS.fullViewSpan}>
-              <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
-              Full View
-            </span>
-          </div>
-        )
-          : <div /> }
+        <CSSTransition
+          in={isImageHovered}
+          timeout={500}
+          classNames={{
+            enter: ImageSliderCSS['fade-enter'],
+            enterActive: ImageSliderCSS['fade-enter-active'],
+            exit: ImageSliderCSS['fade-exit'],
+            exitActive: ImageSliderCSS['fade-exit-active'],
+          }}
+          mountOnEnter
+          unmountOnExit
+        >
+          {/* { isImageHovered ? ( */}
+            <div className={ImageSliderCSS.fullView}>
+              <span className={ImageSliderCSS.fullViewSpan}>
+                <img className={ImageSliderCSS.diagonalArrows} alt="Expand to Full Screen" src={diagonalArrows} />
+                Full View
+              </span>
+            </div>
+          {/* ) : <div /> } */}
+        </CSSTransition>
 
         <div className={ImageSliderCSS.slider_button_container}>
           <button // Button that includes an arrow icon img to go to the next image

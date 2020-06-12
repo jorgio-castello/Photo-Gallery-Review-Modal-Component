@@ -14,14 +14,14 @@
   cursor: pointer;
 }
 
-@keyframes fadeInOpacity {
+/* @keyframes fadeInOpacity {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+} */
 
 .prev_button {
   display: flex;
@@ -122,7 +122,7 @@
   background: rgba(0, 0, 0, 0.50);
   padding: 1.2em;
   border-radius: 5px;
-  animation: fadein .5s;
+  /* animation: fadein .5s; */
   font-family: 'Roboto';
   font-size: 1.2em;
 }
@@ -132,7 +132,25 @@
   margin-right: .3em;
 }
 
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
 .fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+/* .fade-exit {
   animation: fadeout .5s;
 }
 
@@ -152,7 +170,7 @@
   to {
     opacity: 0;
   }
-}
+} */
 
 .fullView:hover {
   cursor: pointer;
