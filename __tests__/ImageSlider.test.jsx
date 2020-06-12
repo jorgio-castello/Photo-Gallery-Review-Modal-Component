@@ -37,8 +37,6 @@ describe('Unit Tests', () => {
     expect(instance.state.activePhotoIdx).toBe(0);
 
     AppWrapper.find('button img[alt="Next"]').simulate('click');
-    expect(instance.state.activePhotoIdx).toBe(1);
-
     AppWrapper.find('button img[alt="Previous"]').simulate('click');
     expect(instance.state.activePhotoIdx).toBe(0);
   });
@@ -53,7 +51,7 @@ describe('Unit Tests', () => {
 
     expect(instance.state.showGalleryModal).toBe(false);
 
-    AppWrapper.find('button img[alt="View All"]').simulate('click');
+    AppWrapper.find('button img[alt="View Gallery"]').simulate('click');
     expect(instance.state.showGalleryModal).toBe(true);
   });
 });
