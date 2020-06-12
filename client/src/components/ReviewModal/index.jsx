@@ -24,20 +24,15 @@ class ReviewModal extends React.Component {
     };
     this.displayReviewSlider = this.displayReviewSlider.bind(this);
     this.hideReviewSlider = this.hideReviewSlider.bind(this);
-    document.querySelector('body').addEventListener('click', () => this.setState({showReviewSlider: false }));
   }
 
-  componentDidlMount() {
+  componentDidMount() {
     this.setState({
       showReviewSlider: false,
     });
   }
 
-  componentWillUnmount() {
-    this.setState = (state, callback) => {
-      return;
-    };
-  }
+  componentWillUnmount() {}
 
   displayReviewSlider() {
     this.setState({
