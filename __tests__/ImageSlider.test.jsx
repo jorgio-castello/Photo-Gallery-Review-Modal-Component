@@ -47,4 +47,14 @@ describe('Unit Tests', () => {
     AppWrapper.find('button img[alt="View Gallery"]').simulate('click');
     expect(instance.state.showGalleryModal).toBe(true);
   });
+
+  test('should update isImageHovered state on hover', () => {
+    const wrapper = shallow(<App />);
+    const ImageSliderWrapper = wrapper.find(ImageSlider).shallow();
+
+    const instance = ImageSliderWrapper.instance();
+
+    ImageSliderWrapper.simulate('mouseenter');
+    expect(instance.state.isImageHovered).toBe(true);
+  });
 });
