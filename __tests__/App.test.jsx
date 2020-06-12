@@ -1,9 +1,10 @@
 import React from 'react';
-import ImageSlider from '../client/src/components/ImageSlider';
-import Modal from '../client/src/components/Modal';
 import { shallow, mount } from 'enzyme';
 
 import App from '../client/src/components/App';
+import ImageSlider from '../client/src/components/ImageSlider';
+import Modal from '../client/src/components/Modal';
+
 import ExampleActivityData from '../ExampleActivityData';
 
 describe('App Unit Tests', () => {
@@ -16,7 +17,7 @@ describe('App Unit Tests', () => {
     expect(wrapper).toExist();
   });
 
-  test('should fetch Trip Advisor Gallery Data when the component mounts', () => {
+  test('should fetch data when the component mounts', () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
     jest.spyOn(instance, 'fetchTripAdvisorData');
