@@ -49,7 +49,7 @@ const handleImageSliderClick = function (e) {
   if (target.tagName === 'BUTTON') {
     [target] = target.childNodes;
   }
-  if (target.tagName === 'SPAN' || target.getAttribute('alt') === 'View All') {
+  if (target.tagName === 'SPAN' || target.getAttribute('alt') === 'View Gallery') {
     this.showGalleryModalHandler();
   } else if (target.tagName === 'DIV') {
     this.showReviewModalHandler();
