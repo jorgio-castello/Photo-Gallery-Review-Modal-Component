@@ -44,7 +44,7 @@ describe('Unit Tests', () => {
 
     expect(instance.state.showGalleryModal).toBe(false);
 
-    AppWrapper.find('button img[alt="View All"]').simulate('click');
+    AppWrapper.find('button img[alt="View Gallery"]').simulate('click');
     expect(instance.state.showGalleryModal).toBe(true);
   });
 });
