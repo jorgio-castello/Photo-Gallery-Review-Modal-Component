@@ -34,14 +34,12 @@ class ImageSlider extends React.Component {
     this.setState({
       isImageHovered: true,
     });
-    document.querySelector('#container').classList.add(ImageSliderCSS.containerHover);
   }
 
   handleHoverOut() {
     this.setState({
       isImageHovered: false,
     });
-    document.querySelector('#container').classList.remove(ImageSliderCSS.containerHover);
   }
 
   render() {
@@ -61,7 +59,6 @@ class ImageSlider extends React.Component {
         onKeyPress={() => {}}
         onMouseEnter={this.handleHoverIn}
         onMouseLeave={this.handleHoverOut}
-        id="container"
       >
         <div className={ImageSliderCSS.prev_button}>
           <button // Button that includes an arrow icon img to go to the previous image
