@@ -1,52 +1,61 @@
-# Trip Advisor
+# TripsToday - Gallery Service
+> A photo gallery / review modal component built with React, React CSS Transitions, Express, and MySQL
 
-> Project description
+![Gallery / Review Modal](https://media.giphy.com/media/Idl9FAkqE5XDJdLKIy/giphy.gif)
 
-## Related Projects
+<a href="https://youtu.be/KmhqD7b5MHc" target="_blank">YouTube Demo Video</a>
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+## Google Lighthouse Details
+> Optimized with photo compression in WebP format, an efficient cache policy, and Webpack bundle compression
 
-## Table of Contents
+<img src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/FEC+Optimizations.png" width=600>
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-> Please run npm install in the project directory's root <br/> </br>
-> Seeding the MySQL database
-1. Prep <br/>
-  1a. If your default MySQL user is 'root', <strong>and you do not have a password</strong>, proceed to Step 2 </br>
-  1b. Please create a file called config.js in the root of this directory </br>
-  1c. Add the following to the config.js file </br>
+## Getting Started
+Before starting, please have MySQL 5.7 installed. Create a config.js in the root directory, and paste the following with your user / password credentials:
   ```
   module.exports.mysqlConfig = {
     host: 'localhost',
-    user: [Add your MySQL username here as a string],
-    password: [Add your MySQL password here as a string],
-    database: 'tripAdvisorGallery'
+    user: 'ExampleUserName',
+    password: 'ExampleUserPassword',
+    database: 'tripsTodayGallery'
   };
   ```
-2. In the root directory, copy / paste the following command: npm run seed
+  
+Download Dependencies:
+``` 
+npm install 
+```
+
+To seed database:
+``` 
+npm run seed 
+```
+
+To start the service:
+``` 
+npm start 
+```
+
+## Development
+To run development server:
+``` 
+npm run server-dev 
+```
+
+To re-build webpack bundle on component changes:
+``` 
+npm run react-dev 
+```
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+- Node 6.13.0 or greater
+- MySQL 5.7
 
-- Node 6.13.0
-- etc
 
-## Development
+## Related Projects
 
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
+- https://github.com/NoStepOnSnake/tripadvisor-reviews-server
+- https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
+- https://github.com/NoStepOnSnake/tripadvisor-travelers-server
 
