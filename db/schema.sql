@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS tripAdvisorGallery;
+DROP DATABASE IF EXISTS tripsTodayGallery;
 
-CREATE DATABASE tripAdvisorGallery;
+CREATE DATABASE tripsTodayGallery;
 
-USE tripAdvisorGallery;
+USE tripsTodayGallery;
 
 CREATE TABLE activity (
   id INT NOT NULL auto_increment,
