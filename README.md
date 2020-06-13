@@ -31,6 +31,11 @@ To seed database:
 npm run seed 
 ```
 
+To build webpack bundle:
+``` 
+npm run webpack 
+```
+
 To start the service:
 ``` 
 npm start 
