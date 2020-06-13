@@ -1,9 +1,8 @@
 # TripsToday - Gallery Service
 > A photo gallery / review modal component built with React, React CSS Transitions, Express, and MySQL
 
+<a href="https://youtu.be/KmhqD7b5MHc" target="_blank">Click for YouTube Demo Video</a><br></br>
 ![Gallery / Review Modal](https://media.giphy.com/media/Idl9FAkqE5XDJdLKIy/giphy.gif)
-
-<a href="https://youtu.be/KmhqD7b5MHc" target="_blank">YouTube Demo Video</a>
 
 ## Google Lighthouse Details
 > Optimized with photo compression in WebP format, an efficient cache policy, and Webpack bundle compression
