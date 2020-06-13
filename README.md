@@ -5,6 +5,11 @@
 
 <a href="https://youtu.be/KmhqD7b5MHc" target="_blank">YouTube Demo Video</a>
 
+## Google Lighthouse Details
+> Optimized with photo compression in WebP format, an efficient cache policy, and Webpack bundle compression
+
+<img src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/FEC+Optimizations.png" width=600>
+
 ## Getting Started
 Before starting, please have MySQL 5.7 installed. Create a config.js in the root directory, and paste the following with your user / password credentials:
   ```
