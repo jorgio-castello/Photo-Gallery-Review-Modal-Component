@@ -18,6 +18,9 @@ describe('Review Unit Tests', () => {
     expect(wrapper.find(ReviewSlider)).toHaveLength(1);
 
     wrapper.find(ReviewSlider).shallow().find('button').simulate('click');
-    expect(wrapper.find(ReviewSlider)).toHaveLength(0);
+    // Give a second for ReviewSlider to unmount as a result of including React CSS Transitions
+    setTimeout(() => {
+      expect(wrapper.find(ReviewSlider)).toHaveLength(0);
+    }, 1000);
   });
 });
