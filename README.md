@@ -47,6 +47,11 @@ To re-build webpack bundle on component changes:
 npm run react-dev 
 ```
 
+To test:
+``` 
+npm test 
+```
+
 ## Requirements
 
 - Node 6.13.0 or greater
