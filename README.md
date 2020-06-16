@@ -1,4 +1,4 @@
-# TripsToday - Gallery Service
+# TripsToday - Gallery / Review Module
 > A photo gallery / review modal component built with React, React CSS Transitions, Express, and MySQL
 
 <br></br>
