@@ -4,7 +4,7 @@
 <br></br>
 
 <a href="https://youtu.be/KmhqD7b5MHc" target="_blank">Click for YouTube Demo Video</a><br></br>
-![Gallery / Review Modal](https://media.giphy.com/media/iJhSWXkC0TOPQ6GXRf/giphy.gif)
+![Gallery / Review Modal](https://media.giphy.com/media/kyRGggoT7cFvrqRTaC/giphy.gif)
 
 ## Google Lighthouse Details
 > Optimized with photo compression in WebP format, an efficient cache policy, and Webpack bundle compression
