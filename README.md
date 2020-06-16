@@ -1,11 +1,15 @@
 # TripsToday - Gallery Service
 > A photo gallery / review modal component built with React, React CSS Transitions, Express, and MySQL
 
+<br></br>
+
 <a href="https://youtu.be/KmhqD7b5MHc" target="_blank">Click for YouTube Demo Video</a><br></br>
 ![Gallery / Review Modal](https://media.giphy.com/media/Idl9FAkqE5XDJdLKIy/giphy.gif)
 
 ## Google Lighthouse Details
 > Optimized with photo compression in WebP format, an efficient cache policy, and Webpack bundle compression
+
+<br></br>
 
 <img src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/FEC+Optimizations.png" width=600>
 
