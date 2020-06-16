@@ -11,7 +11,7 @@
 
 <br></br>
 
-<img src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/FEC+Optimizations.png" width=600>
+<img src="https://trip-advisor-photo-gallery.s3-us-west-1.amazonaws.com/Gallery+Optimizations.png" width=600>
 
 ## Getting Started
 Before starting, please have MySQL 5.7 installed. Create a config.js in the root directory, and paste the following with your user / password credentials:
@@ -67,8 +67,7 @@ npm test
 
 
 ## Related Projects
-
+- https://github.com/tinaxing14/BookTour
 - https://github.com/NoStepOnSnake/tripadvisor-reviews-server
 - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
-- https://github.com/NoStepOnSnake/tripadvisor-travelers-server
 
