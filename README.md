@@ -1,8 +1,6 @@
 # TripsToday - Gallery / Review Module
 > A photo gallery / review modal component built with React, React CSS Transitions, Express, and MySQL
 
-<br></br>
-
 <a href="https://youtu.be/KmhqD7b5MHc" target="_blank">Click for YouTube Demo Video</a><br></br>
 ![Gallery / Review Modal](https://media.giphy.com/media/kyRGggoT7cFvrqRTaC/giphy.gif)
 
@@ -70,4 +68,6 @@ npm test
 - https://github.com/tinaxing14/BookTour
 - https://github.com/NoStepOnSnake/tripadvisor-reviews-server
 - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
+
+> Please visit the following link to see the proxy server featuring all TripsToday services: https://bit.ly/3ftYjWK
 
